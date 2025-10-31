@@ -1,0 +1,24 @@
+.widgets {
+  //   display: grid;
+  display: flex;
+  //   flex-wrap: wrap;
+  gap: $spacing-md;
+  .widget {
+    background-color: $background-color;
+    padding: $spacing-md;
+    border-radius: $border-radius-md;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: $spacing-sm;
+      }
+    }
+  }
+}
+.widget-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+}

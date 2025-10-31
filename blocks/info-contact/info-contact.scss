@@ -1,0 +1,40 @@
+@import "../../assets/css/scss/variables";
+
+.b-info-contact {
+  display: flex;
+  flex-direction: column;
+  // gap: 20px;
+
+  .b-info-contact__call {
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    gap: 15px;
+    margin: 20px 0 30px;
+  }
+  .b-info-contact__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .b-info-contact__item__con {
+      .label {
+        display: block;
+        font-size: 12px;
+        font-weight: normal !important;
+        margin-bottom: 5px;
+        color: $text-light !important;
+      }
+      a,
+      span:not(.label) {
+        font-size: 21px;
+        font-weight: 500;
+        color: $text-color;
+      }
+    }
+  }
+  .btn-rev {
+    display: block;
+    // width: 100%;
+  }
+}

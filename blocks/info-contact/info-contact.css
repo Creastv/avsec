@@ -1,0 +1,50 @@
+/* ========================================
+   Variables
+   ======================================== */
+/* Colors */
+/* Typography */
+/* Poppins font weights */
+/* Spacing */
+/* Breakpoints */
+/* Container */
+/* Border radius */
+/* Shadows */
+/* Transitions */
+/* Z-index */
+/* Grid */
+/* Forms */
+/* Buttons */
+/* Navigation */
+/* Cards */
+/* Tables */
+.b-info-contact {
+  display: flex;
+  flex-direction: column;
+}
+.b-info-contact .b-info-contact__call {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0 30px;
+}
+.b-info-contact .b-info-contact__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.b-info-contact .b-info-contact__item .b-info-contact__item__con .label {
+  display: block;
+  font-size: 12px;
+  font-weight: normal !important;
+  margin-bottom: 5px;
+  color: #666 !important;
+}
+.b-info-contact .b-info-contact__item .b-info-contact__item__con a,
+.b-info-contact .b-info-contact__item .b-info-contact__item__con span:not(.label) {
+  font-size: 21px;
+  font-weight: 500;
+  color: #000;
+}
+.b-info-contact .btn-rev {
+  display: block;
+}/*# sourceMappingURL=info-contact.css.map */

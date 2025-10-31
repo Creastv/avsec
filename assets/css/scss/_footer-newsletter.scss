@@ -1,0 +1,106 @@
+.footer-newsletter {
+  position: relative;
+  z-index: 2;
+  background-color: $accent-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg 50px;
+  margin-bottom: -30px;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border-color;
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-lg;
+  }
+  .newsletter {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+    @media (max-width: $breakpoint-md) {
+      flex-wrap: wrap;
+      gap: $spacing-lg;
+      width: 100%;
+    }
+    .newsletter-content-wrap {
+      display: flex;
+      gap: $spacing-lg;
+      align-items: center;
+      @media (max-width: $breakpoint-xl) {
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+        width: 100%;
+      }
+      .newsletter-content-title {
+        p {
+          color: $primary-dark;
+          font-size: 12px;
+          font-weight: $font-weight-bold;
+          margin-bottom: 0;
+          white-space: nowrap;
+          @media (max-width: $breakpoint-md) {
+            white-space: normal;
+          }
+        }
+        h4 {
+          font-size: 42px;
+          font-weight: $font-weight-bold;
+          color: $text-color;
+          margin-bottom: 0;
+        }
+      }
+      .newsletter-content-desc {
+        p {
+          font-size: $font-size-sm;
+          color: $text-color;
+          margin-bottom: 0;
+          line-height: normal;
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+    .newsletter-form-wrap {
+      @media (max-width: $breakpoint-sm) {
+        width: 100%;
+      }
+      .newsletter-form {
+        position: relative;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+        margin-bottom: $spacing-sm;
+      }
+      .wpcf7-acceptance {
+        span {
+          font-size: 10px !important;
+          margin: 0;
+        }
+      }
+      .newsletter-form p {
+        display: flex;
+      }
+      .wpcf7-not-valid-tip {
+        position: absolute;
+        display: none !important;
+      }
+      .wpcf7-form-control-wrap {
+        margin: 0;
+      }
+      .wpcf7-spinner {
+        position: absolute !important;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%) !important;
+      }
+      .wpcf7-submit {
+        &:disabled {
+          background-color: $primary-color;
+          // border-color: $text-muted;
+          // cursor: not-allowed;
+          // transform: none;
+          // box-shadow: none;
+          border: none;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

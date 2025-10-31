@@ -1,0 +1,129 @@
+.page-form {
+  .page-form__grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: $spacing-xl;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+      padding-top: $spacing-lg;
+      padding-bottom: $spacing-lg;
+    }
+  }
+  .page-form__header {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: $background-light;
+      z-index: -1;
+      margin-top: -2rem;
+    }
+    .post-thumbnail {
+      img {
+        border-radius: $border-radius-lg;
+      }
+    }
+  }
+  .page-form__content {
+    min-width: 0;
+  }
+
+  .page-form__sidebar {
+    min-width: 0;
+  }
+
+  .page-form__sticky {
+    position: sticky;
+    top: 50px;
+    padding: $spacing-lg;
+    background-color: $primary-color;
+    border-radius: $border-radius-lg;
+    color: $background-color;
+    * {
+      color: #fff;
+    }
+
+    a {
+      color: $background-color;
+    }
+    .wpcf7-submit {
+      width: 100%;
+      background-color: $background-black;
+      color: $background-color;
+    }
+    .wpcf7-spinner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+  }
+
+  .post-thumbnail {
+    margin-bottom: $spacing-lg;
+  }
+
+  .post-content {
+    // max-width: 860px;
+    margin: 0 auto;
+  }
+
+  form {
+    display: grid;
+    gap: $spacing-md;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+    }
+    .header-form {
+      h4 {
+        margin-bottom: 0;
+        br {
+          display: block !important;
+        }
+      }
+      p {
+        margin: 0;
+      }
+    }
+    small {
+      line-height: 1.1;
+    }
+    .wpcf7-acceptance {
+      span {
+        line-height: 1.1;
+        font-size: 12px;
+        font-weight: $font-weight-normal;
+        margin-bottom: 0;
+      }
+    }
+    label > span,
+    .wpcf7 label > span {
+      margin: 0;
+      margin-bottom: 5px;
+      display: block;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    .page-form__grid {
+      grid-template-columns: 1fr;
+    }
+    .page-form__sticky {
+      position: static;
+      top: auto;
+    }
+  }
+}

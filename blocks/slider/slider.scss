@@ -1,0 +1,120 @@
+@import "../../assets/css/scss/variables";
+
+.b-slider {
+  position: relative;
+  width: 100vw;
+  left: -50vw;
+  margin-left: 50%;
+  margin-bottom: 50px;
+  @media (max-width: $breakpoint-md) {
+    margin-bottom: 30px;
+  }
+  @media (max-width: $breakpoint-sm) {
+    margin-bottom: 20px;
+  }
+  // z-index: 1;
+  .swiper-slide {
+    height: 50vh;
+    min-height: 600px;
+    width: 100%;
+    .b-slider__image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        // z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 38, 99, 0.7);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .b-slider-conent {
+      position: absolute;
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      z-index: 4;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // text-align: center;
+      .b-slider-conent__inner {
+        max-width: 992px;
+        // margin: 0 auto;
+      }
+      .b-slider-conent__title {
+        color: #fff;
+        font-size: 61px;
+        line-height: 1.2;
+        @media (max-width: $breakpoint-md) {
+          font-size: 61px;
+        }
+        @media (max-width: $breakpoint-md) {
+          font-size: 51px;
+        }
+        @media (max-width: $breakpoint-sm) {
+          font-size: 41px;
+        }
+      }
+      .b-slider-conent__desc {
+        margin-bottom: 30px;
+        p {
+          font-size: 21px;
+          @media (max-width: $breakpoint-md) {
+            font-size: 18px;
+          }
+          @media (max-width: $breakpoint-sm) {
+            font-size: 16px;
+          }
+        }
+        * {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .swiper-pagination--home {
+    bottom: 100px;
+    span {
+      width: 22px;
+      height: 22px;
+      background-color: $primary-dark;
+      border: 1px solid $primary-color;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      border: 3px solid $primary-color;
+    }
+  }
+}
+
+// .h-middle {
+//   position: absolute !important;
+//   background: none !important;
+//   .mega-menu-link {
+//     color: #fff !important;
+//   }
+// }
+
+.acf-block-preview {
+  .b-slider {
+    .swiper-wrapper {
+      .swiper-slide {
+        display: none;
+        &:nth-child(1) {
+          display: block;
+        }
+      }
+    }
+  }
+}

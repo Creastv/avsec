@@ -1,0 +1,291 @@
+/* ========================================
+   Button Styles
+   ======================================== */
+
+/* Base button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  font-weight: $font-weight-medium;
+  line-height: $btn-line-height;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: $btn-border-radius;
+  transition: all $btn-transition;
+  position: relative;
+  overflow: hidden;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 124, 186, 0.25);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Button sizes
+  &.btn-sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+    border-radius: $border-radius-sm;
+  }
+
+  &.btn-lg {
+    padding: $spacing-md $spacing-xl;
+    font-size: $font-size-lg;
+    border-radius: $border-radius-lg;
+  }
+
+  // Button variants
+  &.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+      border-color: darken($secondary-color, 10%);
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &.btn-outline-primary {
+    background-color: transparent;
+    border-color: $primary-color;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+      color: $background-color;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &.btn-outline-secondary {
+    background-color: transparent;
+    border-color: $secondary-color;
+    color: $secondary-color;
+
+    &:hover {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      color: $background-color;
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &.btn-ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $background-light;
+      color: $primary-color;
+    }
+  }
+
+  &.btn-link {
+    background-color: transparent;
+    border-color: transparent;
+    color: $primary-color;
+    text-decoration: underline;
+    padding: 0;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  // Button states
+  &.btn-success {
+    background-color: $success-color;
+    border-color: $success-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: darken($success-color, 10%);
+      border-color: darken($success-color, 10%);
+    }
+  }
+
+  &.btn-warning {
+    background-color: $warning-color;
+    border-color: $warning-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: darken($warning-color, 10%);
+      border-color: darken($warning-color, 10%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $error-color;
+    border-color: $error-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: darken($error-color, 10%);
+      border-color: darken($error-color, 10%);
+    }
+  }
+
+  &.btn-info {
+    background-color: $info-color;
+    border-color: $info-color;
+    color: $background-color;
+
+    &:hover {
+      background-color: darken($info-color, 10%);
+      border-color: darken($info-color, 10%);
+    }
+  }
+}
+
+/* Button groups */
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+
+  .btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: $btn-border-radius;
+      border-bottom-left-radius: $btn-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $btn-border-radius;
+      border-bottom-right-radius: $btn-border-radius;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:hover {
+      z-index: 1;
+    }
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+}
+
+/* Icon buttons */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.btn-sm {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.btn-lg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Loading state */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: btn-spin 1s linear infinite;
+  }
+}
+
+@keyframes btn-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating action button */
+.fab {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $primary-color;
+  color: $background-color;
+  border: none;
+  box-shadow: $shadow-lg;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xl;
+  transition: all $transition-base;
+  z-index: $z-index-fixed;
+
+  &:hover {
+    background-color: $primary-color;
+    transform: scale(1.1);
+    box-shadow: $shadow-xl;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

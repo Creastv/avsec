@@ -1,0 +1,46 @@
+.recommended-posts {
+  padding: $spacing-xxl 0 200px;
+  background-color: $background-dark;
+  margin-bottom: -150px;
+  .recommended-posts__posts-wraper {
+    display: grid;
+    gap: $spacing-md;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: $breakpoint-lg) {
+      gap: $spacing-lg;
+    }
+  }
+  article {
+    display: flex;
+    //   flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    .post-thumbnail {
+      width: 100px;
+      height: 100px;
+      border-radius: $border-radius-lg;
+      overflow: hidden;
+      border: 1px solid $border-color;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $border-radius-lg;
+      }
+    }
+    .post-content {
+      padding: $spacing-sm;
+      flex: 1;
+
+      .post-title {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacing-sm;
+      }
+      .post-excerpt {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+}

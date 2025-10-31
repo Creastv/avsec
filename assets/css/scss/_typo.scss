@@ -1,0 +1,304 @@
+/* ========================================
+   Typography Styles
+   ======================================== */
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: $font-weight-semibold;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: $font-weight-semibold;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: $font-weight-medium;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: $font-weight-medium;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: $font-weight-medium;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  font-weight: $font-weight-normal;
+}
+
+/* Site title */
+.site-title {
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  color: #333;
+  text-decoration: none;
+  margin: 0;
+
+  &:hover {
+    color: #007cba;
+  }
+}
+
+.site-description {
+  font-size: 0.9rem;
+  font-weight: $font-weight-light;
+  color: #666;
+  margin: 0.5rem 0 0 0;
+  font-style: italic;
+}
+
+/* Post titles */
+.post-title {
+  font-size: 1.8rem;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 1rem;
+  color: #333;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: #007cba;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+/* Page titles */
+.page-title {
+  font-size: 2rem;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1rem;
+  color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+/* Post meta */
+.post-meta {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: $font-weight-normal;
+  margin-bottom: 1rem;
+
+  span {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: #007cba;
+    }
+  }
+}
+
+/* Widget titles */
+.widget-title {
+  font-size: 1.125rem;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.footer-widget-title {
+  font-size: 1rem;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #007cba;
+  background-color: #f8f9fa;
+  font-style: italic;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: #666;
+  }
+}
+
+/* Code */
+code {
+  background-color: #f1f1f1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+}
+
+pre {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1rem 0;
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+/* Lists */
+ul,
+ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Definition lists */
+dl {
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: $font-weight-semibold;
+  margin-bottom: 0.25rem;
+}
+
+dd {
+  margin-bottom: 0.75rem;
+  margin-left: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: $font-weight-semibold;
+}
+
+/* Small text */
+small {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Strong and emphasis */
+strong,
+b {
+  font-weight: $font-weight-semibold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Mark */
+mark {
+  background-color: #fff3cd;
+  padding: 0.1rem 0.2rem;
+  border-radius: 2px;
+}
+
+/* Font weight utility classes */
+.font-light {
+  font-weight: $font-weight-light !important;
+}
+
+.font-normal {
+  font-weight: $font-weight-normal !important;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium !important;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold !important;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold !important;
+}
+
+.font-extrabold {
+  font-weight: $font-weight-extrabold !important;
+}
+
+.font-black {
+  font-weight: $font-weight-black !important;
+}

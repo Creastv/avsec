@@ -1,0 +1,41 @@
+// Import button and separator styles
+@import "scss/variables";
+@import "scss/buttons";
+@import "../../blocks/separator/separator";
+@import "../../blocks/button/button";
+@import "scss/_training";
+
+.wp-block {
+  max-width: 90%;
+}
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 100%;
+}
+/* Width of "full-width" blocks */
+.wp-block[data-align="full"] {
+  max-width: none;
+}
+
+html :where(.wp-block)[data-align="right"] > * {
+  float: none !important;
+}
+
+html :where(.wp-block)[data-align="left"] > * {
+  float: none !important;
+}
+
+html :where(.wp-block)[data-align="left"],
+html :where(.wp-block)[data-align="right"] {
+  width: 100%;
+  height: initial !important;
+}
+
+.acf-block-preview {
+  .custome-separator {
+    background-color: #eeeef0 !important;
+  }
+}
+.wp-block-spacer {
+  background-color: #eeeef0 !important;
+}

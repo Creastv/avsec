@@ -1,0 +1,76 @@
+/* ========================================
+   Variables
+   ======================================== */
+/* Colors */
+/* Typography */
+/* Poppins font weights */
+/* Spacing */
+/* Breakpoints */
+/* Container */
+/* Border radius */
+/* Shadows */
+/* Transitions */
+/* Z-index */
+/* Grid */
+/* Forms */
+/* Buttons */
+/* Navigation */
+/* Cards */
+/* Tables */
+.b-bg {
+  position: relative;
+  width: 100vw;
+  left: -50vw;
+  margin-left: 50%;
+}
+.b-bg .b-bg-apla {
+  position: absolute;
+  left: 0;
+  z-index: -99;
+  width: 100%;
+  height: calc(100% - 200px);
+}
+
+.mt-50 {
+  margin-top: -50px;
+}
+
+.acf-block-preview .b-bg {
+  border: 1px solid #0e4194;
+  padding: 20px;
+  width: 100%;
+  left: initial;
+  margin-left: initial;
+  margin-top: 50px !important;
+}
+.acf-block-preview .b-bg:before {
+  content: "Kontener BG";
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 12px;
+  background-color: #0e4194;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.m-b-160 {
+  margin-bottom: -160px;
+}
+
+.svg-full {
+  margin-bottom: -35px;
+}
+.svg-full svg {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  object-position: center;
+  object-fit: cover;
+  object-position: center;
+}/*# sourceMappingURL=bg.css.map */
