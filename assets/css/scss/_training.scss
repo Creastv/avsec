@@ -20,6 +20,9 @@
 .b-services {
   .swiper {
     overflow: hidden !important;
+    @media (max-width: $breakpoint-md) {
+      overflow: hidden !important;
+    }
   }
   .swiper-slide {
     .b-service {

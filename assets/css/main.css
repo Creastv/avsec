@@ -2412,6 +2412,7 @@ mark {
 .site-main {
   min-height: calc(100vh - 200px);
   padding: 0 0 3rem 0;
+  overflow-y: hidden;
 }
 
 /* Page header */
@@ -2832,7 +2833,7 @@ mark {
 }
 @media (max-width: 768px) {
   .single-post .post-content {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
 }
 .single-post .post-content h1,
@@ -2965,7 +2966,7 @@ mark {
 }
 @media (max-width: 768px) {
   .single-post .post-footer {
-    padding: 1.5rem;
+    padding: 1rem 0;
   }
 }
 .single-post .post-footer .post-tags {
@@ -3183,6 +3184,11 @@ mark {
 }
 .post .post-content {
   padding: 1.5rem;
+}
+@media (max-width: 768px) {
+  .post .post-content {
+    padding: 1rem 0;
+  }
 }
 .post .post-content .post-title {
   font-size: 1.25rem;
@@ -3885,6 +3891,11 @@ mark {
     gap: 1.5rem;
   }
 }
+@media (max-width: 768px) {
+  .recommended-posts .recommended-posts__posts-wraper {
+    grid-template-columns: 1fr;
+  }
+}
 .recommended-posts article {
   display: flex;
   align-items: center;
@@ -3962,6 +3973,11 @@ mark {
 
 .b-services .swiper {
   overflow: hidden !important;
+}
+@media (max-width: 768px) {
+  .b-services .swiper {
+    overflow: hidden !important;
+  }
 }
 .b-services .swiper-slide .b-service {
   overflow: hidden;

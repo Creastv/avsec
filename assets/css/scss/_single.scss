@@ -89,7 +89,7 @@
     margin: 0 auto;
 
     @media (max-width: $breakpoint-md) {
-      padding: $spacing-lg;
+      padding: $spacing-lg 0;
     }
 
     h1,
@@ -233,9 +233,8 @@
 
   .post-footer {
     padding: $spacing-lg $spacing-xxl $spacing-xxl $spacing-xxl;
-
     @media (max-width: $breakpoint-md) {
-      padding: $spacing-lg;
+      padding: $spacing-md 0;
     }
 
     .post-tags {

@@ -9,6 +9,9 @@
     @media (max-width: $breakpoint-lg) {
       gap: $spacing-lg;
     }
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
   }
   article {
     display: flex;

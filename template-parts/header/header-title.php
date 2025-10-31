@@ -106,10 +106,10 @@ if ($bg_image) {
 
         <h1 class="page-title"><?php echo $title; ?></h1>
         <?php if ($subtitle) : ?>
-            <p class="page-subtitle"><?php echo $subtitle; ?></p>
+        <p class="page-subtitle"><?php echo $subtitle; ?></p>
         <?php endif; ?>
         <?php if (is_home() || is_category()): ?>
-            <?php
+        <?php
             $navLocation = 'blog';
             $temp_menu = wp_nav_menu(array(
                 'theme_location'  => $navLocation,
@@ -123,17 +123,17 @@ if ($bg_image) {
 
         <?php endif; ?>
         <?php if (is_search()) : ?>
-            <div class="search-form">
-                <?php get_search_form(); ?>
-            </div>
+        <div class="search-form">
+            <?php get_search_form(); ?>
+        </div>
         <?php endif; ?>
         <?php if ($show_meta) : ?>
-            <?php if (function_exists('yoast_breadcrumb')) : ?>
-                <nav class="breadcrumbs" aria-label="Breadcrumbs">
-                    <?php yoast_breadcrumb('', ''); ?>
-                </nav>
-            <?php endif; ?>
-            <div class="post-meta">
+        <?php if (function_exists('yoast_breadcrumb')) : ?>
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+            <?php yoast_breadcrumb('', ''); ?>
+        </nav>
+        <?php endif; ?>
+        <!-- <div class="post-meta">
                 <span class="posted-on">
                     <time datetime="<?php echo get_the_date('c'); ?>">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +174,7 @@ if ($bg_image) {
                         <?php the_category(', '); ?>
                     </span>
                 <?php endif; ?>
-            </div>
+            </div> -->
         <?php endif; ?>
     </div>
 </div>

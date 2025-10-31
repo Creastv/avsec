@@ -22,10 +22,12 @@ $articles = new WP_Query(array(
                 <?php while ($articles->have_posts()) : $articles->the_post(); ?>
                     <article>
                         <div class="post-thumbnail">
-                            <?php the_post_thumbnail('large'); ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('large'); ?>
+                            </a>
                         </div>
                         <div class="post-content">
-                            <h3 class="post-title"><?php the_title(); ?></h3>
+                            <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <div class="post-excerpt"> <?php echo custom_excerpt(10); ?></div>
                         </div>
                     </article>

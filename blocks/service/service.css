@@ -20,6 +20,11 @@
 .b-services .swiper {
   overflow: initial !important;
 }
+@media (max-width: 768px) {
+  .b-services .swiper {
+    overflow: hidden !important;
+  }
+}
 .b-services .swiper-slide .b-service {
   overflow: hidden;
   height: 407px;
