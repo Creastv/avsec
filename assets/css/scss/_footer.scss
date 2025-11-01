@@ -343,16 +343,24 @@
 #go-to-top.active {
   transform: translate(0, 0);
 }
-
+.sticky-socialmedia.active {
+  // top: initial !important;
+  bottom: 120px !important;
+  a {
+    border: 1px solid $background-dark;
+  }
+}
 .sticky-socialmedia {
   position: fixed;
   z-index: 999;
-  top: 22%;
+  bottom: 62%;
   right: 20px;
+  transition: all 0.5s ease;
+  @media (max-width: $breakpoint-xl) {
+    bottom: 52%;
+  }
   @media (min-width: $breakpoint-sm) {
-    // top: initial;
     transform: translate(0, 0);
-    // bottom: 100px;
     right: 15px;
   }
   ul {
@@ -365,7 +373,7 @@
         background-color: $background-light;
         display: block;
         margin: 0;
-        padding: 8px;
+        padding: 6px;
         width: 36px;
         height: 36px;
         border-radius: 100%;

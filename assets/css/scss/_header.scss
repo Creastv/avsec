@@ -306,6 +306,12 @@
     }
   }
 }
+#mega-menu-wrap-primary
+  #mega-menu-primary
+  > li.mega-menu-item
+  > a.mega-menu-link {
+  height: initial !important;
+}
 #mega-menu-wrap-primary {
   z-index: 9;
   .mega-menu-item {

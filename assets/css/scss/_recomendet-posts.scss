@@ -15,15 +15,23 @@
   }
   article {
     display: flex;
-    //   flex-direction: column;
     align-items: center;
     gap: $spacing-md;
+    transition: all 0.4s ease-out;
     .post-thumbnail {
       width: 100px;
       height: 100px;
       border-radius: $border-radius-lg;
       overflow: hidden;
       border: 1px solid $border-color;
+      a {
+        display: block;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 140px;
+        height: 100%;
+        margin: 0;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -41,9 +49,13 @@
         margin-bottom: $spacing-sm;
       }
       .post-excerpt {
-        font-size: $font-size-sm;
-        font-weight: $font-weight-normal;
+        font-size: 14px;
+        line-height: 1.2;
       }
+    }
+    &:hover {
+      transform: translate(0, -5px);
+      box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
     }
   }
 }

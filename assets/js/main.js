@@ -122,13 +122,14 @@
         // Add fixed class when element reaches top of viewport
         function handleScroll() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
             if (scrollTop >= originalTop) {
                 siteNav.classList.add('fixed');
-                document.body.style.paddingTop = siteNavHeight + 'px';
+                // Force recalculation of siteNav height in case it changed (e.g., on resize)
+                const navHeight = siteNav.offsetHeight;
+                document.querySelector('#page').style.paddingTop = navHeight + 'px';
             } else {
                 siteNav.classList.remove('fixed');
-                document.body.style.paddingTop = '0px';
+                document.querySelector('#page').style.paddingTop = '0px';
             }
         }
         
@@ -139,39 +140,7 @@
         handleScroll();
     }
 
-    const archiveNav = document.querySelector('#menu-aktualnosci-sticky-menu');
-    if (archiveNav && siteNav) {
-        // Get the height of archive navigation
-        const archiveNavHeight = archiveNav.offsetHeight;
-        // Store original position
-        const originalTop = archiveNav.offsetTop;
-        
-        // Add fixed class when element reaches site navigation
-        function handleArchiveScroll() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const siteNavBottom = siteNav.offsetTop + siteNav.offsetHeight;
-            
-            if (scrollTop >= originalTop) {
-                archiveNav.classList.add('fixed');
-                // Position archive nav below site nav when both are fixed
-                if (siteNav.classList.contains('fixed')) {
-                    archiveNav.style.top = siteNavHeight + 'px';
-                } else {
-                    archiveNav.style.top = '0px';
-                }
-            } else {
-                archiveNav.classList.remove('fixed');
-                archiveNav.style.top = '';
-            }
-        }
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', handleArchiveScroll);
-        
-        // Check initial position
-        handleArchiveScroll();
-    }
-
+   
 })();
 
 // Sticky header-content-right for mobile devices
@@ -215,53 +184,25 @@
     }
 })();
 
-// Sticky social media and go-to-top button positioning
-// (function(){
-//   const el = document.querySelector('.sticky-socialmedia');
-//   const el2 = document.querySelector('#go-to-top');
-//   const footer = document.getElementById('footer');
-//   const marginBottom = 0; // ten sam co w CSS: bottom: 20px
-//   let ticking = false;
-
-//   function update(){
-//     const rectFooter = footer.getBoundingClientRect();
-//     const winH = window.innerHeight;
-//     const elH = el.offsetHeight;
-
-//     // ile pikseli "nachodzi" footer na przestrzeń zajmowaną przez box
-//     const overlap = (winH - rectFooter.top) - (elH + marginBottom);
-
-//     if (overlap > 0){
-//       // podnieś box o dokładnie tyle, by dotknął, ale nie najechał
-//       el.style.transform = `translateY(${-overlap}px)`;
-//       el2.classList.add('active');
-//     } else {
-//       el.style.transform = `translateY(0)`;
-//       el2.classList.remove('active');
-//     }
-//     ticking = false;
-//   }
-
-//   function onScroll(){
-//     if (!ticking){
-//       ticking = true;
-//       requestAnimationFrame(update);
-//     }
-//   }
-
-//   // Add scroll event listener
-//   window.addEventListener('scroll', onScroll);
-// })();
-
 
 (function(){
   const el = document.querySelector('#go-to-top');
+  const social = document.querySelector('.sticky-socialmedia');
   window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
       el.classList.add('active');
+     
     } else {
       el.classList.remove('active');
+
     }
+    if (window.scrollY > 200) {
+   
+        social.classList.add('active');
+      } else {
+     
+        social.classList.remove('active');
+      }
   });
   el.addEventListener('click', function() {
     window.scrollTo({
