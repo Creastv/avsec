@@ -68,6 +68,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-left: 80px;
+}
+@media (max-width: 576px) {
+  .b-slider .swiper-slide .b-slider-conent {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .b-slider .swiper-slide .b-slider-conent .b-slider-conent__inner {
   max-width: 992px;
@@ -123,6 +130,18 @@
   transform: translate(0px, -50%);
   padding: 0 50px;
 }
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home {
+    flex-direction: row;
+    justify-content: initial;
+    align-items: initial;
+    bottom: 15px;
+    padding: 0;
+    top: initial;
+    left: 15px;
+    transform: initial;
+  }
+}
 .b-slider .swiper-pagination--home span {
   position: relative;
   background: none;
@@ -135,15 +154,45 @@
   opacity: 1;
   transition: all 0.3s;
 }
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span {
+    width: 150px;
+    height: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span:after {
+    width: 0px;
+    transition: all 0.3s ease;
+  }
+}
 .b-slider .swiper-pagination--home span:last-child {
   width: 0;
   align-items: flex-end;
 }
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span:last-child {
+    align-items: initial;
+    width: auto;
+  }
+}
 .b-slider .swiper-pagination--home span:last-child:after {
   bottom: 40px !important;
 }
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span:last-child:after {
+    bottom: 20px !important;
+    width: 0px;
+  }
+}
 .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active {
   height: 300px;
+}
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active {
+    height: initial;
+    width: 150px;
+  }
 }
 .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active:after {
   content: "";
@@ -154,6 +203,12 @@
   width: 1px;
   height: calc(100% - 30px);
   background-color: #1cafed;
+  transition: all 0.3s ease;
+}
+@media (max-width: 576px) {
+  .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active:after {
+    display: none;
+  }
 }
 .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active .swiper-pagination-bullet-number {
   color: #1cafed !important;

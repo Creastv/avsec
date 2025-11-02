@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
     lazy: true,
     speed: 1000,
     // parallax: true,
-    autoplay: {
-      delay: 4000
-    },
+    // autoplay: {
+    //   delay: 4000
+    // },
     grabCursor: true,
     effect: "fade",
     pagination: {

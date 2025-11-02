@@ -48,6 +48,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
       // text-align: center;
+      padding-left: 80px;
+      @media (max-width: $breakpoint-sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
       .b-slider-conent__inner {
         max-width: 992px;
         // margin: 0 auto;
@@ -94,6 +99,16 @@
     top: 50%;
     transform: translate(0px, -50%);
     padding: 0 50px;
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: row;
+      justify-content: initial;
+      align-items: initial;
+      bottom: 15px;
+      padding: 0;
+      top: initial;
+      left: 15px;
+      transform: initial;
+    }
     span {
       position: relative;
       background: none;
@@ -105,15 +120,38 @@
       justify-content: center;
       opacity: 1;
       transition: all 0.3s;
+      @media (max-width: $breakpoint-sm) {
+        width: 150px;
+        height: 20px;
+      }
+      &:after {
+        @media (max-width: $breakpoint-sm) {
+          width: 0px;
+          transition: all 0.3s ease;
+        }
+      }
       &:last-child {
         width: 0;
         align-items: flex-end;
+        @media (max-width: $breakpoint-sm) {
+          align-items: initial;
+          width: auto;
+        }
         &:after {
           bottom: 40px !important;
+          @media (max-width: $breakpoint-sm) {
+            bottom: 20px !important;
+            width: 0px;
+          }
         }
       }
       &.swiper-pagination-bullet-active {
         height: 300px;
+        @media (max-width: $breakpoint-sm) {
+          height: initial;
+          width: 150px;
+          // padding-right: 100px;
+        }
         &:after {
           content: "";
           position: absolute;
@@ -123,6 +161,10 @@
           width: 1px;
           height: calc(100% - 30px);
           background-color: $primary-color;
+          transition: all 0.3s ease;
+          @media (max-width: $breakpoint-sm) {
+            display: none;
+          }
         }
         .swiper-pagination-bullet-number {
           color: $primary-color !important;

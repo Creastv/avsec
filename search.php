@@ -28,12 +28,10 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
         <?php else : ?>
-            <div class="no-posts">
+            <div class="text-center">
                 <h2>Brak wyników</h2>
                 <p>Przepraszamy, ale nic nie znaleziono dla wyszukiwanej frazy. Spróbuj ponownie z innymi słowami
                     kluczowymi.</p>
-
-                <?php get_search_form(); ?>
             </div>
         <?php endif; ?>
     </div>

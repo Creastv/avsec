@@ -115,8 +115,11 @@
 }
 .footer-column-menus {
   display: flex;
-  flex-wrap: wrap;
+
   gap: $spacing-xxl;
+  @media (max-width: $breakpoint-lg) {
+    flex-wrap: wrap;
+  }
   @media (max-width: $breakpoint-sm) {
     width: 100%;
     gap: $spacing-sm;
@@ -318,12 +321,18 @@
   // path {
   //   fill: $primary-dark !important;
   // }
-  @media (min-width: $breakpoint-sm) {
-    bottom: 20px;
-    right: 15px;
+  @media (max-width: $breakpoint-sm) {
+    bottom: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
   }
   svg {
-    margin-top: 5px;
+    margin-top: 6px;
+    @media (max-width: $breakpoint-sm) {
+      width: 20px;
+      height: 14px;
+    }
     path {
       fill: $primary-dark !important;
     }
@@ -359,9 +368,10 @@
   @media (max-width: $breakpoint-xl) {
     bottom: 52%;
   }
-  @media (min-width: $breakpoint-sm) {
+  @media (max-width: $breakpoint-sm) {
     transform: translate(0, 0);
-    right: 15px;
+    right: 5px;
+    bottom: 80px !important;
   }
   ul {
     list-style: none;
@@ -379,6 +389,11 @@
         border-radius: 100%;
         transition: all 0.2s linear;
         text-align: center;
+        @media (max-width: $breakpoint-sm) {
+          width: 30px;
+          height: 30px;
+          padding: 4px;
+        }
         svg {
           display: block;
           width: 100%;

@@ -29,7 +29,7 @@ if (!empty($szkolenia_posts)) :
                     }
                 ?>
                     <div class="swiper-slide">
-                        <div class="b-service">
+                        <article class="b-service">
                             <div class="b-service__image">
                                 <a href="<?php echo esc_url($permalink); ?>">
                                     <?php
@@ -45,18 +45,13 @@ if (!empty($szkolenia_posts)) :
                                 <?php if (!empty($title)) : ?>
                                     <h2><?php echo esc_html($title); ?></h2>
                                 <?php endif; ?>
-                                <!-- <?php if (!empty($excerpt)) : ?>
-                        <div class="b-service-conent__desc">
-                            <p><?php echo esc_html($excerpt); ?></p>
-                        </div> -->
-                            <?php endif; ?>
-                            <div class="b-service-conent__button">
-                                <a class="btn btn-primary" href="<?php echo esc_url($permalink); ?>">
-                                    Czytaj więcej
-                                </a>
+                                <div class="b-service-conent__button">
+                                    <a class="btn btn-primary" href="<?php echo esc_url($permalink); ?>">
+                                        Czytaj więcej
+                                    </a>
+                                </div>
                             </div>
-                            </div>
-                        </div>
+                        </article>
                     </div>
                 <?php
                 endforeach;

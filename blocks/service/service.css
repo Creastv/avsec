@@ -29,6 +29,7 @@
   overflow: hidden;
   height: 407px;
   border-radius: 8px;
+  border: 2px solid #ddd;
   overflow: hidden;
   position: relative;
   transition: all 0.3s ease;
@@ -93,6 +94,7 @@
 .b-services .swiper-slide .b-service:hover {
   box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
+  border-color: #1cafed;
 }
 .b-services .swiper-slide .b-service:hover .b-service-conent__button {
   bottom: 20px;
