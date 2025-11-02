@@ -7,7 +7,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/separator/separator.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -29,7 +29,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/info-contact/info-contact.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -51,7 +51,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/slider/slider.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -82,7 +82,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/service/service.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -105,7 +105,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/bg/bg.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -127,7 +127,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/anchor/anchor.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#575289',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -140,7 +140,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/sticky-sidebar/sticky-sidebar.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#575289',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -163,7 +163,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/bullets/bullets.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -186,7 +186,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/posts-grid/posts-grid.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -203,7 +203,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/faq/faq.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -221,7 +221,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/faq-global/faq-global.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#122b4f',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -241,7 +241,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/title/title.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
@@ -265,7 +265,7 @@ function register_acf_block_types()
     'render_template'   => 'blocks/button/button.php',
     'category'          => 'formatting',
     'icon' => array(
-      'background' => '#c80100',
+      'background' => '#0e4194',
       'foreground' => '#fff',
       'src' => 'ellipsis',
     ),
