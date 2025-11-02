@@ -12,13 +12,14 @@ if (!defined('ABSPATH')) {
 }
 
 $header_email = get_theme_mod('header_email', '');
-$platform_button_text = get_theme_mod('platform_button_text', __('Platforma AvSec Control', 'avsec'));
+$platform_button_text = avsec_get_translated_theme_mod('platform_button_text', 'Platform Button Text', __('Platforma AvSec Control', 'avsec'));
 $platform_button_url = get_theme_mod('platform_button_url', '#');
 $platform_button_style = get_theme_mod('platform_button_style', 'primary');
 ?>
 
 <div class="wpml-elementor-ls">
-    <ul class="">
+    <?php do_action('wpml_add_language_selector'); ?>
+    <!-- <ul class="">
         <li>
             <a href="#">
                 <svg width="29" height="19" viewBox="0 0 29 19" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +73,7 @@ $platform_button_style = get_theme_mod('platform_button_style', 'primary');
                 </svg>
             </a>
         </li>
-    </ul>
+    </ul> -->
 </div>
 <a href="#" id="search-trigger" class="search-trigger">
     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">

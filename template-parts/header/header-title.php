@@ -77,7 +77,7 @@ if (is_home() || is_front_page()) {
     $title = post_type_archive_title('', false);
     // Pobierz subtitle z Customizer dla archiwum szkoleń
     if (is_post_type_archive('szkolenia')) {
-        $subtitle = get_theme_mod('szkolenia_archive_subtitle', '');
+        $subtitle = avsec_get_translated_theme_mod('szkolenia_archive_subtitle', 'Szkolenia Archive Subtitle');
     } else {
         $subtitle = get_the_archive_description();
     }

@@ -1855,9 +1855,6 @@ mark {
   }
 }
 
-.footer-menu {
-  min-width: 200px;
-}
 @media (max-width: 576px) {
   .footer-menu {
     width: 100%;

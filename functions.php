@@ -175,6 +175,168 @@ function avsec_default_menu()
 // Include customizer settings
 require get_template_directory() . '/inc/wp-customizer.php';
 
+// WPML Integration
+function avsec_wpml_setup()
+{
+    // Register customizer strings for WPML String Translation
+    if (function_exists('icl_register_string')) {
+        // Footer Brand strings
+        $footer_description = get_theme_mod('footer_description');
+        if (!empty($footer_description)) {
+            icl_register_string('avsec', 'Footer Description', $footer_description);
+        }
+
+        $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
+        if (!empty($footer_menu_1_title)) {
+            icl_register_string('avsec', 'Footer Menu 1 Title', $footer_menu_1_title);
+        }
+
+        $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
+        if (!empty($footer_menu_2_title)) {
+            icl_register_string('avsec', 'Footer Menu 2 Title', $footer_menu_2_title);
+        }
+
+        $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
+        if (!empty($footer_menu_3_title)) {
+            icl_register_string('avsec', 'Footer Menu 3 Title', $footer_menu_3_title);
+        }
+
+        $contact_button_text = get_theme_mod('contact_button_text');
+        if (!empty($contact_button_text)) {
+            icl_register_string('avsec', 'Contact Button Text', $contact_button_text);
+        }
+
+        // Header Extras strings
+        $platform_button_text = get_theme_mod('platform_button_text');
+        if (!empty($platform_button_text)) {
+            icl_register_string('avsec', 'Platform Button Text', $platform_button_text);
+        }
+
+        // Szkolenia Archive strings
+        $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
+        if (!empty($szkolenia_archive_subtitle)) {
+            icl_register_string('avsec', 'Szkolenia Archive Subtitle', $szkolenia_archive_subtitle);
+        }
+    }
+}
+add_action('init', 'avsec_wpml_setup');
+
+// Helper function to get translated customizer string
+function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
+{
+    $value = get_theme_mod($mod_name, $default);
+
+    if (function_exists('icl_t')) {
+        return icl_t('avsec', $context_name, $value);
+    }
+
+    return $value;
+}
+
+// Get current language code
+function avsec_get_current_language()
+{
+    if (function_exists('icl_get_current_language')) {
+        return icl_get_current_language();
+    }
+    return get_locale();
+}
+
+// Get home URL for current language
+function avsec_get_home_url()
+{
+    if (function_exists('icl_get_home_url')) {
+        return icl_get_home_url();
+    }
+    return home_url('/');
+}
+
+// Check if WPML is active
+function avsec_is_wpml_active()
+{
+    return defined('ICL_SITEPRESS_VERSION');
+}
+
+// Get translated attachment ID (for logo, images, etc.)
+function avsec_get_translated_attachment_id($attachment_id)
+{
+    if (empty($attachment_id)) {
+        return $attachment_id;
+    }
+
+    // If WPML is active, get translated attachment ID
+    if (function_exists('icl_object_id')) {
+        // Try to get translated attachment
+        $translated_id = icl_object_id($attachment_id, 'attachment', true);
+
+        // If translation exists, use it; otherwise use original
+        if ($translated_id && $translated_id != $attachment_id) {
+            return $translated_id;
+        }
+    }
+
+    // WPML Media may not be configured - return original ID
+    return $attachment_id;
+}
+
+// Get custom logo with WPML support
+function avsec_get_custom_logo_id()
+{
+    $logo_id = get_theme_mod('custom_logo');
+
+    // If logo is empty and WPML is active, try to get from default language
+    if (empty($logo_id) && function_exists('icl_get_default_language')) {
+        global $sitepress;
+        if ($sitepress) {
+            $current_lang = $sitepress->get_current_language();
+            $default_lang = icl_get_default_language();
+
+            // If we're not in default language
+            if ($current_lang !== $default_lang) {
+                // Switch to default language temporarily
+                $sitepress->switch_lang($default_lang);
+
+                // Get logo from default language
+                $logo_id = get_theme_mod('custom_logo');
+
+                // Switch back
+                $sitepress->switch_lang($current_lang);
+            }
+        }
+    }
+
+    return avsec_get_translated_attachment_id($logo_id);
+}
+
+// Force footer logo to use default language if not set
+function avsec_get_footer_logo_id()
+{
+    $logo_id = get_theme_mod('footer_logo');
+
+    // If logo is empty and WPML is active, try to get from default language
+    if (empty($logo_id) && function_exists('icl_get_default_language')) {
+        global $sitepress;
+        if ($sitepress) {
+            $current_lang = $sitepress->get_current_language();
+            $default_lang = icl_get_default_language();
+
+            // If we're not in default language
+            if ($current_lang !== $default_lang) {
+                // Switch to default language temporarily
+                $sitepress->switch_lang($default_lang);
+
+                // Get logo from default language
+                $logo_id = get_theme_mod('footer_logo');
+
+                // Switch back
+                $sitepress->switch_lang($current_lang);
+            }
+        }
+    }
+
+    return avsec_get_translated_attachment_id($logo_id);
+}
+
 // ACF Fields for Header
 add_action('acf/include_fields', function () {
     if (! function_exists('acf_add_local_field_group')) {

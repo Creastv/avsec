@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wpml-config>
+    <!-- Theme Text Domain -->
+    <language-switcher-settings>
+        <key name="style">1</key>
+    </language-switcher-settings>
+    
+    <!-- Enable Media Translation -->
+    <built-in-post-types>
+        <post-type translate="1">attachment</post-type>
+    </built-in-post-types>
+
+    <!-- Custom Fields Translation Settings -->
+    <custom-fields>
+        <!-- Translate these fields -->
+        <custom-field action="translate">desc</custom-field>
+        <custom-field action="translate">footer_description</custom-field>
+        <custom-field action="translate">footer_menu_1_title</custom-field>
+        <custom-field action="translate">footer_menu_2_title</custom-field>
+        <custom-field action="translate">footer_menu_3_title</custom-field>
+        <custom-field action="translate">contact_button_text</custom-field>
+        <custom-field action="translate">platform_button_text</custom-field>
+        <custom-field action="translate">szkolenia_archive_subtitle</custom-field>
+        
+        <!-- Copy these fields (don't translate) -->
+        <custom-field action="copy">display_header</custom-field>
+        <custom-field action="copy">bg_img</custom-field>
+        <custom-field action="copy">footer_logo</custom-field>
+        <custom-field action="copy">footer_logo_width</custom-field>
+        <custom-field action="copy">footer_email</custom-field>
+        <custom-field action="copy">footer_phone</custom-field>
+        <custom-field action="copy">footer_address</custom-field>
+        <custom-field action="copy">header_email</custom-field>
+        <custom-field action="copy">contact_button_url</custom-field>
+        <custom-field action="copy">platform_button_url</custom-field>
+        <custom-field action="copy">platform_button_style</custom-field>
+        <custom-field action="copy">social_linkedin</custom-field>
+        <custom-field action="copy">social_facebook</custom-field>
+        <custom-field action="copy">social_youtube</custom-field>
+        <custom-field action="copy">footer_menu_1</custom-field>
+        <custom-field action="copy">footer_menu_2</custom-field>
+        <custom-field action="copy">footer_menu_3</custom-field>
+    </custom-fields>
+
+    <!-- Admin Texts for Translation -->
+    <admin-texts>
+        <!-- Theme Customizer Settings -->
+        <key name="footer_description">
+            <key name="*" />
+        </key>
+        <key name="footer_menu_1_title">
+            <key name="*" />
+        </key>
+        <key name="footer_menu_2_title">
+            <key name="*" />
+        </key>
+        <key name="footer_menu_3_title">
+            <key name="*" />
+        </key>
+        <key name="contact_button_text">
+            <key name="*" />
+        </key>
+        <key name="platform_button_text">
+            <key name="*" />
+        </key>
+        <key name="szkolenia_archive_subtitle">
+            <key name="*" />
+        </key>
+    </admin-texts>
+
+    <!-- Built-in Custom Types Support -->
+    <custom-types>
+        <custom-type translate="1">szkolenia</custom-type>
+    </custom-types>
+
+    <!-- Taxonomies -->
+    <taxonomies>
+        <taxonomy translate="1">category</taxonomy>
+        <taxonomy translate="1">post_tag</taxonomy>
+    </taxonomies>
+</wpml-config>
+
