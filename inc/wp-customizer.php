@@ -294,6 +294,25 @@ function avsec_customize_register($wp_customize)
             'outline-secondary' => __('Outline Secondary', 'avsec'),
         ),
     ));
+
+    // Szkolenia Archive Section
+    $wp_customize->add_section('szkolenia_archive', array(
+        'title'    => __('Archiwum Szkoleń', 'avsec'),
+        'priority' => 40,
+    ));
+
+    // Szkolenia Archive Subtitle
+    $wp_customize->add_setting('szkolenia_archive_subtitle', array(
+        'default'           => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('szkolenia_archive_subtitle', array(
+        'label'   => __('Podtytuł Archiwum Szkoleń', 'avsec'),
+        'section' => 'szkolenia_archive',
+        'type'    => 'textarea',
+        'description' => __('Podtytuł wyświetlany na stronie archiwum szkoleń', 'avsec'),
+    ));
 }
 
 // Helper function to get menu choices

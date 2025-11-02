@@ -39,3 +39,24 @@ html :where(.wp-block)[data-align="right"] {
 .wp-block-spacer {
   background-color: #eeeef0 !important;
 }
+
+.anchor {
+  height: 100px;
+  background-color: #eeeef0 !important;
+  border-radius: 6px;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  padding: 10px;
+  &:before {
+    content: "Anchor point";
+    position: absolute;
+    color: $primary-color;
+    background-color: $primary-color;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+  }
+}

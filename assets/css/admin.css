@@ -355,6 +355,22 @@
   justify-content: center;
 }
 
+.szkolenia-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 992px) {
+  .szkolenia-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .szkolenia-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .recomended-training {
   position: relative;
   padding: 3rem 0 150px;
@@ -451,12 +467,10 @@
 }
 .b-service .b-service-conent {
   position: absolute;
-  overflow: hidden;
   width: 100%;
   z-index: 2;
   bottom: 0;
   padding: 20px;
-  padding-top: 50%;
   transition: all 0.3s ease;
 }
 .b-service .b-service-conent h2 {
@@ -465,6 +479,10 @@
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
+}
+.b-service .b-service-conent h2 a {
+  color: #fff;
+  text-decoration: none;
 }
 .b-service .b-service-conent__button {
   position: absolute;
@@ -517,4 +535,25 @@ html :where(.wp-block)[data-align=right] {
 
 .wp-block-spacer {
   background-color: #eeeef0 !important;
+}
+
+.anchor {
+  height: 100px;
+  background-color: #eeeef0 !important;
+  border-radius: 6px;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  padding: 10px;
+}
+.anchor:before {
+  content: "Anchor point";
+  position: absolute;
+  color: #1cafed;
+  background-color: #1cafed;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
 }/*# sourceMappingURL=admin.css.map */

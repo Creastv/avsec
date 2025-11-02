@@ -43,11 +43,15 @@ if (!empty($szkolenia_posts)) :
                             </div>
                             <div class="b-service-conent">
                                 <?php if (!empty($title)) : ?>
-                                    <h2><?php echo esc_html($title); ?></h2>
+                                    <h2>
+                                        <a href="<?php echo esc_url($permalink); ?>">
+                                            <?php echo esc_html($title); ?>
+                                        </a>
+                                    </h2>
                                 <?php endif; ?>
                                 <div class="b-service-conent__button">
                                     <a class="btn btn-primary" href="<?php echo esc_url($permalink); ?>">
-                                        Czytaj więcej
+                                        <?php echo esc_html__('Czytaj więcej', 'avsec'); ?>
                                     </a>
                                 </div>
                             </div>

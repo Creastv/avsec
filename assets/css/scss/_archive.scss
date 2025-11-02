@@ -32,13 +32,13 @@
 /* Posts container */
 .posts-container {
   display: grid;
-  gap: $spacing-xxl;
+  gap: $spacing-lg;
   margin-bottom: $spacing-xxl;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   @media (max-width: $breakpoint-lg) {
-    gap: $spacing-lg;
+    grid-template-columns: repeat(2, 1fr);
   }
-  @media (max-width: $breakpoint-sm) {
+  @media (max-width: $breakpoint-md) {
     grid-template-columns: repeat(1, 1fr);
   }
 }

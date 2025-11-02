@@ -1,0 +1,122 @@
+@import "../../assets/css/scss/variables";
+
+.acf-block-preview {
+  .group-container {
+    width: 100% !important;
+    left: 0px !important;
+    margin-left: 0 !important;
+    .container-fluid {
+      display: block;
+      border: 1px solid $border-color;
+      padding: 20px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.b-sticky-con {
+  position: relative;
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+
+  .b-sticky-con__wraper {
+    display: flex;
+    align-items: stretch;
+    gap: $spacing-xl;
+    @media (max-width: $breakpoint-lg) {
+      gap: 50px;
+    }
+    @media (max-width: $breakpoint-md) {
+      flex-wrap: wrap;
+    }
+    .col-1 {
+      &:nth-child(2) {
+        width: 25%;
+        order: 1;
+        @media (max-width: $breakpoint-md) {
+          width: 100%;
+        }
+      }
+      &:nth-child(1) {
+        width: 75%;
+        order: 2;
+        @media (max-width: $breakpoint-md) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  background-color: $background-dark;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  //   box-shadow: $shadow-md;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        position: relative;
+        display: block;
+        width: 100%;
+        a {
+          display: block;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
+          margin-bottom: $spacing-md;
+          text-decoration: none;
+          color: $text-color;
+          &:hover {
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+      .active {
+        position: relative;
+        padding-left: $spacing-md;
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          background-image: url(../../assets/img/corner-mark.png);
+          width: $spacing-md;
+          height: $spacing-md;
+          top: -$spacing-sm;
+          left: $spacing-sm;
+        }
+        a {
+          font-weight: 700;
+          color: $primary-dark;
+        }
+      }
+    }
+  }
+}
+
+.acf-block-preview .b-sticky-con {
+  border: 1px solid $primary-dark;
+  padding: 20px;
+  width: 100%;
+  left: initial;
+  margin-left: initial;
+  margin-top: 50px !important;
+  &:before {
+    content: "Sticky sidebar";
+    color: $background-color;
+    padding: 3px 10px;
+    font-size: 12px;
+    background-color: $primary-dark;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

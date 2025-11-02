@@ -54,7 +54,7 @@ function avsec_scripts()
 
     // Enqueue main JavaScript
     wp_enqueue_script('avsec_swiper_js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',  array(), '20130456', true);
-    // wp_enqueue_script('go-paroller-init', get_template_directory_uri() . '/assets/js/paroller.min.js', array('jquery'), '3', true);
+    wp_enqueue_script('go-paroller-init', get_template_directory_uri() . '/assets/js/paroller.min.js', array('jquery'), '3', true);
     wp_enqueue_script('avsec-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
     wp_enqueue_script('avsec_partners_js', get_template_directory_uri() . '/assets/js/partners.js', array('avsec_swiper_js'), '1.0.0', true);
 

@@ -1,3 +1,15 @@
+.szkolenia-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .recomended-training {
   position: relative;
   padding: 3rem 0 150px;
@@ -95,12 +107,12 @@
   }
   .b-service-conent {
     position: absolute;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
     z-index: 2;
     bottom: 0;
     padding: 20px;
-    padding-top: 50%;
+    // padding-top: 50%;
 
     transition: all 0.3s ease;
     h2 {
@@ -110,6 +122,13 @@
       margin: 0;
       padding: 0;
       transition: all 0.3s ease;
+      a {
+        color: #fff;
+        text-decoration: none;
+        // &:hover {
+        //   color: $primary-color;
+        // }
+      }
     }
   }
   .b-service-conent__button {

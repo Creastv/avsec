@@ -13,7 +13,8 @@ get_header(); ?>
         <?php get_template_part('template-parts/header/header', 'title'); ?>
 
         <?php if (have_posts()) : ?>
-            <div id="posts-container" class="posts-container">
+            <div id="posts-container"
+                class="posts-container <?php if (is_post_type_archive('szkolenia')) echo 'szkolenia-grid'; ?>">
                 <?php while (have_posts()) : the_post(); ?>
                     <?php if (get_post_type() == 'szkolenia'): ?>
                         <?php get_template_part('template-parts/content/content-training'); ?>
@@ -23,7 +24,7 @@ get_header(); ?>
                 <?php endwhile; ?>
             </div>
             <?php if ($wp_query->max_num_pages > 1) : ?>
-                <div class="read-more-archive text-center">
+                <div class=" read-more-archive text-center">
                     <a href="#" class="btn btn-primary" id="load-more" data-page="1"
                         data-max="<?php echo $wp_query->max_num_pages; ?>">
                         <?php _e('Wczytaj więcej', 'go'); ?>

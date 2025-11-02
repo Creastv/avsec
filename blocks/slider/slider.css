@@ -47,6 +47,7 @@
 .b-slider .swiper-slide .b-slider__image:before {
   content: "";
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -55,9 +56,11 @@
 }
 .b-slider .swiper-slide .b-slider__image img {
   width: 100%;
-  height: 100%;
+  height: 108%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .b-slider .swiper-slide .b-slider-conent {
   position: absolute;
