@@ -18,6 +18,11 @@
   //   }
   // }
 }
+.single-post .page-title {
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.5rem;
+  }
+}
 
 /* Page header */
 .page-header {
@@ -28,7 +33,7 @@
   border-radius: $border-radius-lg;
 
   .page-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: $font-weight-bold;
     color: $text-color;
     margin-bottom: $spacing-md;

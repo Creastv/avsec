@@ -1821,10 +1821,12 @@ mark {
   }
 }
 @media (max-width: 576px) {
+  .footer-column-menus .calaps {
+    border-bottom: 1px solid #fff;
+  }
   .footer-column-menus .calaps .calaps__opener {
     position: relative;
     cursor: pointer;
-    border-bottom: 1px solid #fff;
     padding: 1rem 0;
     margin-bottom: 0;
   }
@@ -1847,6 +1849,7 @@ mark {
 @media (max-width: 576px) and (max-width: 576px) {
   .footer-column-menus .calaps .calaps__content {
     display: none;
+    padding-bottom: 1rem;
   }
 }
 @media (max-width: 576px) {
@@ -2487,6 +2490,12 @@ mark {
   padding: 0 0 3rem 0;
 }
 
+@media (max-width: 768px) {
+  .single-post .page-title {
+    font-size: 1.5rem;
+  }
+}
+
 /* Page header */
 .page-header {
   margin-bottom: 3rem;
@@ -2496,7 +2505,7 @@ mark {
   border-radius: 8px;
 }
 .page-header .page-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #000;
   margin-bottom: 1rem;

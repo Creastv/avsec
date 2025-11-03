@@ -36,7 +36,6 @@
 }
 .b-slider .swiper-slide {
   height: 50vh;
-  min-height: 600px;
   width: 100%;
 }
 .b-slider .swiper-slide .b-slider__image {
@@ -99,7 +98,7 @@
 }
 @media (max-width: 576px) {
   .b-slider .swiper-slide .b-slider-conent .b-slider-conent__title {
-    font-size: 41px;
+    font-size: 2rem;
   }
 }
 .b-slider .swiper-slide .b-slider-conent .b-slider-conent__desc {
