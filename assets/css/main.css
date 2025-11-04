@@ -2749,6 +2749,12 @@ mark {
   margin-top: -2rem;
 }
 .page-form .page-form__header .post-thumbnail img {
+  max-height: 500px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   border-radius: 8px;
 }
 .page-form .page-form__content {
