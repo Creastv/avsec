@@ -42,6 +42,9 @@
     padding-bottom: 0 !important;
     &:before {
       height: calc(100% - 250px) !important;
+      @media (max-width: $breakpoint-md) {
+        height: calc(100% - 100px) !important;
+      }
     }
   }
   .page-form__content {

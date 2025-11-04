@@ -2764,6 +2764,11 @@ mark {
 .page-form .has-thumbnail:before {
   height: calc(100% - 250px) !important;
 }
+@media (max-width: 768px) {
+  .page-form .has-thumbnail:before {
+    height: calc(100% - 100px) !important;
+  }
+}
 .page-form .page-form__content {
   min-width: 0;
 }
