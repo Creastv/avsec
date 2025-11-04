@@ -2743,7 +2743,7 @@ mark {
   position: absolute;
   left: -150%;
   width: 400%;
-  height: calc(100% + 2rem);
+  height: calc(100% + 2rem) !important;
   background-color: #f8f8f8;
   z-index: -1;
   margin-top: -2rem;
@@ -2756,6 +2756,9 @@ mark {
   -o-object-position: center;
      object-position: center;
   border-radius: 8px;
+}
+.page-form .has-thumbnail:before {
+  height: 50% !important;
 }
 .page-form .page-form__content {
   min-width: 0;

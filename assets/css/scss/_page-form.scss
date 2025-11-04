@@ -21,7 +21,7 @@
       position: absolute;
       left: -150%;
       width: 400%;
-      height: calc(100% + 2rem);
+      height: calc(100% + 2rem) !important;
       background-color: $background-light;
       z-index: -1;
       margin-top: -2rem;
@@ -34,6 +34,11 @@
         object-position: center;
         border-radius: $border-radius-lg;
       }
+    }
+  }
+  .has-thumbnail {
+    &:before {
+      height: 50% !important;
     }
   }
   .page-form__content {
