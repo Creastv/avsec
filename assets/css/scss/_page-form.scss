@@ -33,6 +33,7 @@
         object-fit: cover;
         object-position: center;
         border-radius: $border-radius-lg;
+        border: 1px solid $primary-color;
       }
     }
   }

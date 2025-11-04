@@ -2756,6 +2756,7 @@ mark {
   -o-object-position: center;
      object-position: center;
   border-radius: 8px;
+  border: 1px solid #1cafed;
 }
 .page-form .has-thumbnail {
   padding-bottom: 0 !important;
