@@ -41,7 +41,7 @@
     // margin-bottom: 0px;
     padding-bottom: 0 !important;
     &:before {
-      height: 50% !important;
+      height: calc(100% - 250px) !important;
     }
   }
   .page-form__content {

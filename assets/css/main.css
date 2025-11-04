@@ -2762,7 +2762,7 @@ mark {
   padding-bottom: 0 !important;
 }
 .page-form .has-thumbnail:before {
-  height: 50% !important;
+  height: calc(100% - 250px) !important;
 }
 .page-form .page-form__content {
   min-width: 0;
