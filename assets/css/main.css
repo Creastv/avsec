@@ -2736,12 +2736,14 @@ mark {
 .page-form .page-form__header:before {
   content: "";
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50%;
+  left: -150%;
+  width: 300%;
+  height: calc(50% + 2rem);
   background-color: #f8f8f8;
   z-index: -1;
   margin-top: -2rem;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .page-form .page-form__header .post-thumbnail img {
   border-radius: 8px;
