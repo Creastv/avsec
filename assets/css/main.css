@@ -2757,6 +2757,9 @@ mark {
      object-position: center;
   border-radius: 8px;
 }
+.page-form .has-thumbnail {
+  padding-bottom: 0 !important;
+}
 .page-form .has-thumbnail:before {
   height: 50% !important;
 }

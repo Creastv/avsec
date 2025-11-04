@@ -37,6 +37,8 @@
     }
   }
   .has-thumbnail {
+    // margin-bottom: 0px;
+    padding-bottom: 0 !important;
     &:before {
       height: 50% !important;
     }
