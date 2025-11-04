@@ -13,16 +13,17 @@
     }
   }
   .page-form__header {
+    position: relative;
     &:before {
       content: "";
       position: absolute;
       left: -150%;
-      width: 300%;
-      height: calc(50% + 2rem);
+      width: 400%;
+      height: calc(100% + 2rem);
       background-color: $background-light;
       z-index: -1;
       margin-top: -2rem;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
       margin-bottom: 20px;
     }
     .post-thumbnail {

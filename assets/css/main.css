@@ -2733,16 +2733,19 @@ mark {
     padding-bottom: 1.5rem;
   }
 }
+.page-form .page-form__header {
+  position: relative;
+}
 .page-form .page-form__header:before {
   content: "";
   position: absolute;
   left: -150%;
-  width: 300%;
-  height: calc(50% + 2rem);
+  width: 400%;
+  height: calc(100% + 2rem);
   background-color: #f8f8f8;
   z-index: -1;
   margin-top: -2rem;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   margin-bottom: 20px;
 }
 .page-form .page-form__header .post-thumbnail img {
