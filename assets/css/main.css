@@ -2735,6 +2735,8 @@ mark {
 }
 .page-form .page-form__header {
   position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
 }
 .page-form .page-form__header:before {
   content: "";
@@ -2745,8 +2747,6 @@ mark {
   background-color: #f8f8f8;
   z-index: -1;
   margin-top: -2rem;
-  padding-bottom: 30px;
-  margin-bottom: 20px;
 }
 .page-form .page-form__header .post-thumbnail img {
   border-radius: 8px;
