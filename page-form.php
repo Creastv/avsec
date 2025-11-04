@@ -18,7 +18,8 @@ $custom_desc_szkolenia = get_field('opis_przed_zdjeciem_');
             <article id="post-<?php the_ID(); ?>" class="page page-form">
                 <div class="page-form__grid">
                     <div class="page-form__content">
-                        <header class="page-form__header <?php echo has_post_thumbnail() ? 'has-thumbnail' : ''; ?>">
+                        <header
+                            class="page-form__header <?php echo has_post_thumbnail() ? 'has-thumbnail' : 'has-thumbnail'; ?>">
                             <?php the_title('<h1 class="page-form__title">', '</h1>'); ?>
                             <?php if (function_exists('yoast_breadcrumb')) : ?>
                                 <nav class="breadcrumbs" aria-label="Breadcrumbs">
