@@ -105,7 +105,8 @@
   margin-bottom: 30px;
 }
 .b-slider .swiper-slide .b-slider-conent .b-slider-conent__desc p {
-  font-size: 21px;
+  font-size: 18px;
+  line-height: 1.4;
 }
 @media (max-width: 768px) {
   .b-slider .swiper-slide .b-slider-conent .b-slider-conent__desc p {

@@ -75,7 +75,8 @@
       .b-slider-conent__desc {
         margin-bottom: 30px;
         p {
-          font-size: 21px;
+          font-size: 18px;
+          line-height: 1.4;
           @media (max-width: $breakpoint-md) {
             font-size: 18px;
           }
