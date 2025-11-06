@@ -131,11 +131,18 @@
       h3 {
         margin-bottom: 10px;
         font-size: 23px;
+        a {
+          color: $text-color;
+          text-decoration: none;
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
       span {
         display: block;
         margin-bottom: 15px;
-        color: $primary-color;
+        color: $primary-dark;
         font-size: 14px;
       }
       .btn-rev {

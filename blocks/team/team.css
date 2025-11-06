@@ -148,10 +148,17 @@
   margin-bottom: 10px;
   font-size: 23px;
 }
+.team-item-short .team-item__wrap .team-item__content h3 a {
+  color: #000;
+  text-decoration: none;
+}
+.team-item-short .team-item__wrap .team-item__content h3 a:hover {
+  color: #1cafed;
+}
 .team-item-short .team-item__wrap .team-item__content span {
   display: block;
   margin-bottom: 15px;
-  color: #1cafed;
+  color: #0e4194;
   font-size: 14px;
 }
 .team-item-short .team-item__wrap .team-item__content .btn-rev {
