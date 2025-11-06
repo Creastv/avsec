@@ -104,7 +104,7 @@ $style = get_field('style');
                     spaceBetween: 20,
                 },
                 1224: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                     spaceBetween: 20,
                 },
             },
