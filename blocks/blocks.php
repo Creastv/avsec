@@ -257,7 +257,40 @@ function register_acf_block_types()
       wp_enqueue_style('go-title',  get_template_directory_uri() . '/blocks/title/title.min.css');
     },
   ));
+  acf_register_block_type(array(
+    'name'              => 'team',
+    'title'             => __('Zespół'),
+    'render_template'   => 'blocks/team/team.php',
+    'category'          => 'formatting',
+    'icon' => array(
+      'background' => '#0e4194',
+      'foreground' => '#fff',
+      'src' => 'ellipsis',
+    ),
+    'mode'            => 'preview',
+    'keywords'          => array('zespół', 'team'),
+    'supports'    => [
+      'align'      => false,
+      'anchor'    => true,
+      'customClassName'  => true,
+      'jsx'       => true,
+    ],
+    'enqueue_assets'    => function () {
+      wp_enqueue_style('go-team',  get_template_directory_uri() . '/blocks/team/team.min.css');
+      // wp_enqueue_script('go-w-mediach-js', get_template_directory_uri() . '/blocks/w-mediach/w-mediach.js', array('jquery'), '4', true);
+    }
+  ));
+  function enqueue_load_more_script_team()
+  {
+    wp_enqueue_script('load-more-team', get_template_directory_uri() . '/blocks/team/team.js', array('jquery'), null, true);
 
+    // Przekazanie wartości PHP do JS
+    wp_localize_script('load-more-team', 'ajax_params', array(
+      'ajaxurl' => admin_url('admin-ajax.php'),
+    ));
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_load_more_script_team');
+  add_action('admin_enqueue_scripts', 'enqueue_load_more_script_team');
 
   acf_register_block_type(array(
     'name'              => 'button-link',

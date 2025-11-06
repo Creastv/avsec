@@ -67,3 +67,38 @@ add_action('init', function () {
     register_taxonomy('szkolenia_kategoria', array('szkolenia'), $tax_args);
     register_taxonomy_for_object_type('szkolenia_kategoria', 'szkolenia');
 });
+
+// Rejestracja Custom Post Type: Zespół
+add_action('init', function () {
+    $labels = array(
+        'name'                  => __('Zespół', 'avsec'),
+        'singular_name'         => __('Członek zespołu', 'avsec'),
+        'menu_name'             => __('Zespół', 'avsec'),
+        'name_admin_bar'        => __('Członek zespołu', 'avsec'),
+        'add_new'               => __('Dodaj nowego', 'avsec'),
+        'add_new_item'          => __('Dodaj nowego członka zespołu', 'avsec'),
+        'new_item'              => __('Nowy członek zespołu', 'avsec'),
+        'edit_item'             => __('Edytuj członka zespołu', 'avsec'),
+        'view_item'             => __('Zobacz członka zespołu', 'avsec'),
+        'all_items'             => __('Wszyscy członkowie zespołu', 'avsec'),
+        'search_items'          => __('Szukaj członków zespołu', 'avsec'),
+        'parent_item_colon'     => __('Nadrzędny członek zespołu:', 'avsec'),
+        'not_found'             => __('Nie znaleziono członków zespołu', 'avsec'),
+        'not_found_in_trash'    => __('Brak członków zespołu w koszu', 'avsec'),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'has_archive'        => false,
+        'rewrite'            => array('slug' => 'zespol'),
+        'show_in_rest'       => true,
+        'menu_position'      => 21,
+        'menu_icon'          => 'dashicons-groups',
+        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions'),
+        'hierarchical'       => false,
+        'publicly_queryable' => true,
+    );
+
+    register_post_type('zespol', $args);
+});

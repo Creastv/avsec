@@ -43,7 +43,7 @@
     &:before {
       height: calc(100% - 250px) !important;
       @media (max-width: $breakpoint-md) {
-        height: calc(100% - 100px) !important;
+        display: none !important;
       }
     }
   }
