@@ -108,7 +108,7 @@ $show_meta = is_single();
         <img src="<?php echo esc_url($bg_image); ?>" alt="<?php echo esc_attr($title); ?>"
             class="page-title-bg-image go-parallex">
     <?php endif; ?>
-    <div class="container">
+    <div class="container-narrow">
         <?php if (is_404()) : ?>
             <h1 class="page-title">404</h1>
         <?php endif; ?>

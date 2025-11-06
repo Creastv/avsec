@@ -1572,7 +1572,8 @@ mark {
      object-position: center;
   z-index: 0;
 }
-.page-title-wrapper .container {
+.page-title-wrapper .container,
+.page-title-wrapper .container-narrow {
   position: relative;
   z-index: 2;
 }

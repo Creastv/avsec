@@ -73,7 +73,8 @@
   }
 
   // Container needs to be above background image
-  .container {
+  .container,
+  .container-narrow {
     position: relative;
     z-index: 2;
   }
