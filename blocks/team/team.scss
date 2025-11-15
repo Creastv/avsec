@@ -168,7 +168,9 @@
   }
   &:hover {
     transform: translate(0, -5px);
-    box-shadow: 0 0px 30px 0px rgba(0, 0, 0, 0.091);
+    .team-item__content {
+      box-shadow: 0 0px 30px 0px rgba(0, 0, 0, 0.091);
+    }
   }
 }
 
