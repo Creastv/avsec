@@ -460,6 +460,10 @@ function custom_excerpt($length = 55, $more = '...')
     // Sprawdzenie, czy post ma ustawiony excerpt
     if (has_excerpt($post->ID)) {
         $excerpt = get_the_excerpt();
+        // Dodaj link "Czytaj więcej" po excerpt
+        if (!empty($excerpt)) {
+            $excerpt .= ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' ... Czytaj więcej', 'avsec') . '</a>';
+        }
     } else {
         // Pobranie treści posta bez HTML i shortcodów Divi
         $content = wp_strip_all_tags(get_the_content());
@@ -469,7 +473,7 @@ function custom_excerpt($length = 55, $more = '...')
         $words = explode(' ', $content, $length + 1);
         if (count($words) > $length) {
             array_pop($words);
-            $excerpt = implode(' ', $words) . $more;
+            $excerpt = implode(' ', $words) . ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' ... Czytaj więcej', 'avsec') . '</a>';
         } else {
             $excerpt = implode(' ', $words);
         }
