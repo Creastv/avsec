@@ -449,6 +449,23 @@ mark {
   font-weight: 900 !important;
 }
 
+.custome-tab {
+  padding: 0;
+  margin-bottom: 30px;
+  list-style: none;
+}
+.custome-tab li {
+  background-color: #f8f8f8;
+  border: 2px solid #ededed;
+  border-left: 3px solid #0054a4;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
+.custome-tab li::marker {
+  left: 50px !important;
+}
+
 /* ========================================
    Contact Form 7 Styles
    ======================================== */
