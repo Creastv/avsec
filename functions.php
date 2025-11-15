@@ -502,3 +502,14 @@ add_action('acf/init', function () {
         'redirect'   => false,
     ));
 });
+
+// Ustawienie liczby postów na archiwum CPT na 10
+function avsec_cpt_archive_posts_per_page($query)
+{
+    // Sprawdź, czy to główne zapytanie i archiwum CPT
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive()) {
+        // Ustaw 10 postów na stronę dla wszystkich archiwów CPT
+        $query->set('posts_per_page', 10);
+    }
+}
+add_action('pre_get_posts', 'avsec_cpt_archive_posts_per_page');
