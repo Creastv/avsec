@@ -122,8 +122,8 @@
   padding: 20px;
 }
 .b-services .swiper-slide .b-service:hover .b-service-conent h2 {
-  transform: translateY(-15px);
-  margin-bottom: 0px;
+  transform: translateY(0px);
+  margin-bottom: 10px;
 }
 .b-services .swiper-slide .b-service:hover .b-service-conent__button {
   max-height: 200px;
