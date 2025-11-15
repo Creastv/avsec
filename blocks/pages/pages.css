@@ -1,0 +1,24 @@
+/* ========================================
+   Variables
+   ======================================== */
+/* Colors */
+/* Typography */
+/* Poppins font weights */
+/* Spacing */
+/* Breakpoints */
+/* Container */
+/* Border radius */
+/* Shadows */
+/* Transitions */
+/* Z-index */
+/* Grid */
+/* Forms */
+/* Buttons */
+/* Navigation */
+/* Cards */
+/* Tables */
+.szkolenia-grid.two-rows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}/*# sourceMappingURL=pages.css.map */

@@ -9,9 +9,9 @@ if (!is_array($pages_posts)) {
 
 if (!empty($pages_posts)) :
 ?>
-    <!-- 🔹 POSTY -->
-    <div id="pages-list" class="posts-container szkolenia-grid">
-        <?php
+<!-- 🔹 POSTY -->
+<div id="pages-list" class="posts-container szkolenia-grid<?php echo count($pages_posts) === 2 ? ' two-rows' : ''; ?>">
+    <?php
         global $post;
         foreach ($pages_posts as $pages_post) :
             // Ustaw globalną zmienną $post dla funkcji WordPress
@@ -21,5 +21,5 @@ if (!empty($pages_posts)) :
         endforeach;
         wp_reset_postdata(); // Resetuj dane posta
         ?>
-    </div>
+</div>
 <?php endif; ?>
