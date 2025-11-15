@@ -8,7 +8,7 @@ $current_categories = wp_get_post_terms($current_id, 'szkolenia_kategoria', arra
 // Query dla polecanych szkoleń
 $query_args = array(
     'post_type' => 'szkolenia',
-    'posts_per_page' => 4,
+    'posts_per_page' => -1,
     'order' => 'DESC',
     'orderby' => 'rand',
     // 'post__not_in' => array($current_id),
