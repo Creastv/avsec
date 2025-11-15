@@ -152,7 +152,7 @@
   margin: 0;
 }
 .posts-grid .post__content .entry-title a {
-  color: #000;
+  color: #14395e;
   text-decoration: none !important;
   transition: all 0.4s ease-out;
 }
@@ -222,6 +222,7 @@
 .posts-grid .post-vertical .post__content .entry-content {
   font-size: 14px;
   line-height: 1.1;
+  color: #0a0a0a;
 }
 .posts-grid .post-vertical:hover {
   transform: translate(0, -5px);

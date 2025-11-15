@@ -40,7 +40,7 @@ body {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: #666;
+  color: #0a0a0a;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -157,7 +157,7 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1rem;
-  color: #333;
+  color: #14395e;
 }
 
 h1 {
@@ -211,7 +211,7 @@ p {
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #14395e;
   text-decoration: none;
   margin: 0;
 }
@@ -222,7 +222,7 @@ p {
 .site-description {
   font-size: 0.9rem;
   font-weight: 300;
-  color: #666;
+  color: #0a0a0a;
   margin: 0.5rem 0 0 0;
   font-style: italic;
 }
@@ -232,7 +232,7 @@ p {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #333;
+  color: #14395e;
 }
 .post-title a {
   color: inherit;
@@ -252,7 +252,7 @@ p {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #333;
+  color: #14395e;
 }
 @media (max-width: 768px) {
   .page-title {
@@ -262,7 +262,7 @@ p {
 
 /* Post meta */
 .post-meta {
-  color: #666;
+  color: #14395e;
   font-size: 0.9rem;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -286,7 +286,7 @@ p {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #333;
+  color: #14395e;
 }
 
 .footer-widget-title {
@@ -300,7 +300,7 @@ p {
 blockquote {
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
-  border-left: 4px solid #007cba;
+  border-left: 4px solid #0054a4;
   background-color: #f8f9fa;
   font-style: italic;
 }
@@ -474,7 +474,7 @@ mark {
 .wpcf7 label {
   display: block;
   font-weight: 300;
-  color: #000;
+  color: #14395e;
   font-size: 0.875rem;
   line-height: 1.2;
   margin-bottom: 0.25rem;
@@ -516,7 +516,7 @@ mark {
   padding: 8px 12px;
   font-size: 0.875rem;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #000;
+  color: #14395e;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -672,7 +672,7 @@ mark {
   padding: 8px 12px;
   font-size: 16px;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #000;
+  color: #14395e;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -729,7 +729,7 @@ mark {
   padding: 8px 12px;
   font-size: 0.875rem;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #000;
+  color: #14395e;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -824,7 +824,7 @@ mark {
   padding: 0.5rem;
   font-size: 0.875rem;
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #000;
+  color: #14395e;
   background-color: #f8f8f8;
   border: 1px dashed #ddd;
   border-radius: 5px;
@@ -1009,7 +1009,7 @@ mark {
 .wpcf7-form-section-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #000;
+  color: #14395e;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #eee;
@@ -1148,7 +1148,7 @@ mark {
   gap: 0.5rem;
 }
 .header-content-right .email-link span {
-  color: #000;
+  color: #14395e;
 }
 @media (max-width: 768px) {
   .header-content-right .email-link {
@@ -1181,7 +1181,7 @@ mark {
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   margin: 0;
   transition: color 0.3s ease;
@@ -1197,7 +1197,7 @@ mark {
 
 .site-description {
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   margin: 0.25rem 0 0 0;
   font-style: italic;
   display: none;
@@ -1251,7 +1251,7 @@ mark {
   list-style: none;
 }
 .secondary-navigation .secondary-menu .menu-item a {
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1295,7 +1295,7 @@ mark {
 .menu-toggle .menu-toggle-text {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #000;
+  color: #14395e;
 }
 .menu-toggle .menu-toggle-icon {
   display: flex;
@@ -1348,7 +1348,7 @@ mark {
   padding: 0;
 }
 .wpml-elementor-ls li a {
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1529,12 +1529,12 @@ mark {
 .page-title-wrapper .page-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000;
+  color: #14395e;
   margin-bottom: 1.5rem;
 }
 .page-title-wrapper .page-subtitle {
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   max-width: 990px;
   margin: 0 auto;
   margin-bottom: 1.5rem;
@@ -1542,7 +1542,7 @@ mark {
 .page-title-wrapper .post-meta {
   margin-top: 1rem;
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -1857,14 +1857,14 @@ mark {
 }
 .site-info p {
   margin-bottom: 0.5rem;
-  color: #666;
+  color: #0a0a0a;
   font-size: 12px;
 }
 .site-info p:last-child {
   margin-bottom: 0;
 }
 .site-info p a {
-  color: #666;
+  color: #0a0a0a;
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 12px;
@@ -1893,7 +1893,7 @@ mark {
   padding: 0;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item a {
-  color: #666;
+  color: #0a0a0a;
   text-decoration: none;
   font-size: 12px;
   transition: color 0.3s ease;
@@ -1921,7 +1921,7 @@ mark {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #666;
+  color: #0a0a0a;
   font-size: 0.875rem;
 }
 
@@ -2098,12 +2098,12 @@ mark {
 .footer-newsletter .newsletter .newsletter-content-wrap .newsletter-content-title h4 {
   font-size: 42px;
   font-weight: 700;
-  color: #000;
+  color: #14395e;
   margin-bottom: 0;
 }
 .footer-newsletter .newsletter .newsletter-content-wrap .newsletter-content-desc p {
   font-size: 0.875rem;
-  color: #000;
+  color: #0a0a0a;
   margin-bottom: 0;
   line-height: normal;
   font-weight: 400;
@@ -2326,7 +2326,7 @@ mark {
 .btn.btn-warning {
   background-color: #ffc107;
   border-color: #ffc107;
-  color: #000;
+  color: #14395e;
 }
 .btn.btn-warning:hover {
   background-color: #d39e00;
@@ -2476,7 +2476,7 @@ mark {
 .page-header .page-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #000;
+  color: #14395e;
   margin-bottom: 1rem;
 }
 @media (max-width: 768px) {
@@ -2486,7 +2486,7 @@ mark {
 }
 .page-header .page-description {
   font-size: 1.125rem;
-  color: #666;
+  color: #0a0a0a;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -2539,7 +2539,7 @@ mark {
   margin-top: 1rem;
   font-size: 0.875rem;
   font-style: normal;
-  color: #666;
+  color: #0a0a0a;
 }
 .page-content img {
   max-width: 100%;
@@ -2554,7 +2554,7 @@ mark {
 }
 .page-content .wp-caption .wp-caption-text {
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   text-align: center;
   margin-top: 0.5rem;
   font-style: italic;
@@ -2577,7 +2577,7 @@ mark {
 .page-content table th {
   background-color: #f8f8f8;
   font-weight: 600;
-  color: #000;
+  color: #14395e;
 }
 .page-content table tr:hover {
   background-color: #f8f8f8;
@@ -2645,10 +2645,10 @@ mark {
 .breadcrumbs {
   margin-bottom: 1.5rem;
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
 }
 .breadcrumbs a {
-  color: #666;
+  color: #0a0a0a;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -2660,7 +2660,7 @@ mark {
   color: #999;
 }
 .breadcrumbs .current {
-  color: #000;
+  color: #14395e;
   font-weight: 500;
 }
 
@@ -2670,7 +2670,7 @@ mark {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #eee;
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
 }
 .page-meta .meta-item {
   display: inline-block;
@@ -2839,7 +2839,7 @@ mark {
 .single-post .post-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000;
+  color: #14395e;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -2853,7 +2853,7 @@ mark {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  color: #666;
+  color: #0a0a0a;
   font-size: 0.875rem;
   margin-bottom: 0;
 }
@@ -2915,7 +2915,7 @@ mark {
 .single-post .post-content h6 {
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #000;
+  color: #14395e;
 }
 .single-post .post-content h1:first-child,
 .single-post .post-content h2:first-child,
@@ -2928,7 +2928,7 @@ mark {
 .single-post .post-content p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  color: #000;
+  color: #14395e;
 }
 .single-post .post-content ul,
 .single-post .post-content ol {
@@ -2967,7 +2967,7 @@ mark {
   margin-top: 1rem;
   font-size: 0.875rem;
   font-style: normal;
-  color: #666;
+  color: #0a0a0a;
   text-align: right;
 }
 .single-post .post-content img {
@@ -2984,7 +2984,7 @@ mark {
 }
 .single-post .post-content .wp-caption .wp-caption-text {
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   margin-top: 0.5rem;
   font-style: italic;
 }
@@ -3006,7 +3006,7 @@ mark {
 .single-post .post-content table th {
   background-color: #f8f8f8;
   font-weight: 600;
-  color: #000;
+  color: #14395e;
 }
 .single-post .post-content table tr:hover {
   background-color: #f8f8f8;
@@ -3030,7 +3030,7 @@ mark {
 .single-post .post-content pre code {
   background: none;
   padding: 0;
-  color: #000;
+  color: #14395e;
 }
 .single-post .post-footer {
   padding: 1.5rem 3rem 3rem 3rem;
@@ -3045,7 +3045,7 @@ mark {
 }
 .single-post .post-footer .post-tags .tags-title {
   font-weight: 600;
-  color: #000;
+  color: #14395e;
   margin-right: 0.5rem;
 }
 .single-post .post-footer .post-tags a {
@@ -3097,14 +3097,14 @@ mark {
 .single-post .post-footer .post-navigation .nav-next .nav-subtitle {
   display: block;
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   margin-bottom: 0.25rem;
 }
 .single-post .post-footer .post-navigation .nav-previous .nav-title,
 .single-post .post-footer .post-navigation .nav-next .nav-title {
   display: block;
   font-weight: 600;
-  color: #000;
+  color: #14395e;
 }
 .single-post .post-footer .post-navigation .nav-next {
   text-align: right;
@@ -3146,11 +3146,11 @@ mark {
 .author-bio .author-info .author-name {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #000;
+  color: #14395e;
   margin-bottom: 0.5rem;
 }
 .author-bio .author-info .author-description {
-  color: #666;
+  color: #0a0a0a;
   line-height: 1.7;
   margin-bottom: 1rem;
 }
@@ -3268,7 +3268,7 @@ mark {
   line-height: 1.2;
 }
 .post .post-content .post-title a {
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -3284,7 +3284,7 @@ mark {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  color: #666;
+  color: #0a0a0a;
   font-size: 0.875rem;
   margin-bottom: 1rem;
 }
@@ -3307,7 +3307,7 @@ mark {
   color: #0054a4;
 }
 .post .post-content .post-excerpt {
-  color: #666;
+  color: #0a0a0a;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -3360,7 +3360,7 @@ mark {
 }
 .archive-filters .filter-group .filter-label {
   font-weight: 600;
-  color: #000;
+  color: #14395e;
   margin-right: 0.5rem;
 }
 .archive-filters .filter-group .filter-select {
@@ -3368,7 +3368,7 @@ mark {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   font-size: 0.875rem;
   transition: border-color 0.3s ease;
 }
@@ -3385,7 +3385,7 @@ mark {
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -3421,7 +3421,7 @@ mark {
   height: 40px;
   padding: 0.5rem 1rem;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -3478,11 +3478,11 @@ mark {
   margin: 3rem 0;
 }
 .no-posts h2 {
-  color: #000;
+  color: #14395e;
   margin-bottom: 1rem;
 }
 .no-posts p {
-  color: #666;
+  color: #0a0a0a;
   margin-bottom: 1.5rem;
 }
 .no-posts .search-form {
@@ -3616,7 +3616,7 @@ mark {
 }
 .search-filters .filter-group .filter-label {
   font-weight: 600;
-  color: #000;
+  color: #14395e;
   margin-right: 0.5rem;
 }
 .search-filters .filter-group .filter-select {
@@ -3624,7 +3624,7 @@ mark {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   font-size: 0.875rem;
   transition: border-color 0.3s ease;
 }
@@ -3641,7 +3641,7 @@ mark {
   padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -3677,7 +3677,7 @@ mark {
   height: 40px;
   padding: 0.5rem 1rem;
   background-color: #fff;
-  color: #000;
+  color: #14395e;
   text-decoration: none;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -3715,11 +3715,11 @@ mark {
   margin-bottom: 1.5rem;
 }
 .no-search-results h2 {
-  color: #000;
+  color: #14395e;
   margin-bottom: 1rem;
 }
 .no-search-results p {
-  color: #666;
+  color: #0a0a0a;
   margin-bottom: 1.5rem;
   max-width: 500px;
   margin-left: auto;
@@ -3730,7 +3730,7 @@ mark {
 }
 .no-search-results .search-suggestions h3 {
   font-size: 1.125rem;
-  color: #000;
+  color: #14395e;
   margin-bottom: 1rem;
 }
 .no-search-results .search-suggestions ul {
@@ -3831,7 +3831,7 @@ mark {
   border-radius: 3px;
 }
 .search-modal .search-close:hover {
-  color: #000;
+  color: #14395e;
   background-color: rgba(0, 0, 0, 0.1);
   transform: scale(1.1);
 }
@@ -3855,7 +3855,7 @@ mark {
   border: none;
   background: none;
   font-size: 1.125rem;
-  color: #000;
+  color: #14395e;
   outline: none;
 }
 .search-modal .search-modal-body .search-input-group .search-input::-moz-placeholder {
@@ -4323,7 +4323,7 @@ mark {
 }
 .wp-caption .wp-caption-text {
   font-size: 0.875rem;
-  color: #666;
+  color: #0a0a0a;
   text-align: center;
   margin-top: 0.5rem;
 }

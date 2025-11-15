@@ -37,13 +37,13 @@
   font-size: 12px;
   font-weight: normal !important;
   margin-bottom: 5px;
-  color: #666 !important;
+  color: #0a0a0a !important;
 }
 .b-info-contact .b-info-contact__item .b-info-contact__item__con a,
 .b-info-contact .b-info-contact__item .b-info-contact__item__con span:not(.label) {
   font-size: 21px;
   font-weight: 500;
-  color: #000;
+  color: #14395e;
 }
 .b-info-contact .btn-rev {
   display: block;

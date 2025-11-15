@@ -12,7 +12,7 @@ h6 {
   font-weight: $font-weight-semibold;
   line-height: 1.2;
   margin-bottom: 1rem;
-  color: #333;
+  color: $text-color;
 }
 
 h1 {
@@ -64,7 +64,7 @@ p {
 .site-title {
   font-size: 1.5rem;
   font-weight: $font-weight-bold;
-  color: #333;
+  color: $text-color;
   text-decoration: none;
   margin: 0;
 
@@ -76,7 +76,7 @@ p {
 .site-description {
   font-size: 0.9rem;
   font-weight: $font-weight-light;
-  color: #666;
+  color: $text-light;
   margin: 0.5rem 0 0 0;
   font-style: italic;
 }
@@ -86,7 +86,7 @@ p {
   font-size: 1.8rem;
   font-weight: $font-weight-semibold;
   margin-bottom: 1rem;
-  color: #333;
+  color: $text-color;
 
   a {
     color: inherit;
@@ -107,7 +107,7 @@ p {
   font-size: 2rem;
   font-weight: $font-weight-bold;
   margin-bottom: 1rem;
-  color: #333;
+  color: $text-color;
 
   @media (max-width: 768px) {
     font-size: 1.75rem;
@@ -116,7 +116,7 @@ p {
 
 /* Post meta */
 .post-meta {
-  color: #666;
+  color: $text-color;
   font-size: 0.9rem;
   font-weight: $font-weight-normal;
   margin-bottom: 1rem;
@@ -144,7 +144,7 @@ p {
   font-size: 1.125rem;
   font-weight: $font-weight-semibold;
   margin-bottom: 1rem;
-  color: #333;
+  color: $text-color;
 }
 
 .footer-widget-title {
@@ -158,7 +158,7 @@ p {
 blockquote {
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
-  border-left: 4px solid #007cba;
+  border-left: 4px solid $primary-color;
   background-color: #f8f9fa;
   font-style: italic;
 
