@@ -345,6 +345,16 @@ ol {
 
 ul {
   list-style-type: disc;
+  color: #0a0a0a;
+}
+
+li {
+  color: #0a0a0a;
+}
+
+strong,
+b {
+  font-weight: 900;
 }
 
 ol {
@@ -2928,7 +2938,7 @@ mark {
 .single-post .post-content p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  color: #14395e;
+  color: #0a0a0a;
 }
 .single-post .post-content ul,
 .single-post .post-content ol {
