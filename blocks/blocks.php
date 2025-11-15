@@ -311,7 +311,7 @@ function register_acf_block_types()
       'jsx'       => true,
     ],
     'enqueue_assets'    => function () {
-      wp_enqueue_style('go-pages',  get_template_directory_uri() . '/blocks/pages/pages.min.css');
+      // wp_enqueue_style('go-pages',  get_template_directory_uri() . '/blocks/pages/pages.min.css');
       // wp_enqueue_script('go-w-mediach-js', get_template_directory_uri() . '/blocks/w-mediach/w-mediach.js', array('jquery'), '4', true);
     }
   ));

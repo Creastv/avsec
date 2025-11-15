@@ -27,7 +27,7 @@ add_action('init', function () {
     $args = array(
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
+        'has_archive'        => false,
         'rewrite'            => array('slug' => 'szkolenia'),
         'show_in_rest'       => true,
         'menu_position'      => 20,

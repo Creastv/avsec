@@ -14,7 +14,7 @@ get_header(); ?>
 
         <?php if (have_posts()) : ?>
             <div id="posts-container"
-                class="posts-container <?php if (is_post_type_archive('szkolenia')) echo 'szkolenia-grid'; ?>">
+                class="posts-container <?php if (is_post_type_archive('szkolenia')) echo 'szkolenia-grid two-rows'; ?>">
                 <?php while (have_posts()) : the_post(); ?>
                     <?php if (get_post_type() == 'szkolenia'): ?>
                         <?php get_template_part('template-parts/content/content-training'); ?>

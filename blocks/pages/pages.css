@@ -16,9 +16,4 @@
 /* Buttons */
 /* Navigation */
 /* Cards */
-/* Tables */
-.szkolenia-grid.two-rows {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}/*# sourceMappingURL=pages.css.map */
+/* Tables *//*# sourceMappingURL=pages.css.map */
