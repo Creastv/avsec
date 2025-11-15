@@ -124,6 +124,7 @@
 .b-services .swiper-slide .b-service:hover .b-service-conent h2 {
   transform: translateY(0px);
   margin-bottom: 10px;
+  transition: all 0.2s ease;
 }
 .b-services .swiper-slide .b-service:hover .b-service-conent__button {
   max-height: 200px;
