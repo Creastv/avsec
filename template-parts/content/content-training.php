@@ -18,6 +18,7 @@
             </h2>
         <?php endif; ?>
         <div class="b-service-conent__button">
+            <p><?php echo custom_excerpt(20, ' ...', false); ?></p>
             <a class="btn btn-primary" href="<?php the_permalink(); ?>">
                 <?php echo esc_html__('Czytaj więcej', 'avsec'); ?>
             </a>

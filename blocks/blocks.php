@@ -293,6 +293,40 @@ function register_acf_block_types()
   add_action('admin_enqueue_scripts', 'enqueue_load_more_script_team');
 
   acf_register_block_type(array(
+    'name'              => 'pages',
+    'title'             => __('Strony'),
+    'render_template'   => 'blocks/pages/pages.php',
+    'category'          => 'formatting',
+    'icon' => array(
+      'background' => '#0e4194',
+      'foreground' => '#fff',
+      'src' => 'ellipsis',
+    ),
+    'mode'            => 'preview',
+    'keywords'          => array('strony', 'pages'),
+    'supports'    => [
+      'align'      => false,
+      'anchor'    => true,
+      'customClassName'  => true,
+      'jsx'       => true,
+    ],
+    'enqueue_assets'    => function () {
+      wp_enqueue_style('go-pages',  get_template_directory_uri() . '/blocks/pages/pages.min.css');
+      // wp_enqueue_script('go-w-mediach-js', get_template_directory_uri() . '/blocks/w-mediach/w-mediach.js', array('jquery'), '4', true);
+    }
+  ));
+  function enqueue_load_more_script_pages()
+  {
+    wp_enqueue_script('load-more-pages', get_template_directory_uri() . '/blocks/pages/pages.js', array('jquery'), null, true);
+
+    // Przekazanie wartości PHP do JS
+    wp_localize_script('load-more-pages', 'ajax_params', array(
+      'ajaxurl' => admin_url('admin-ajax.php'),
+    ));
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_load_more_script_team');
+  add_action('admin_enqueue_scripts', 'enqueue_load_more_script_team');
+  acf_register_block_type(array(
     'name'              => 'button-link',
     'title'             => __(' Przycisk '),
     'render_template'   => 'blocks/button/button.php',
