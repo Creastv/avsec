@@ -138,14 +138,14 @@
 .posts-grid .post__content .entry-term a {
   display: inline-block;
   font-size: 12px;
-  color: #1cafed;
+  color: #0054a4;
   background-color: #fff;
   padding: 4px 10px;
 }
 .posts-grid .post__content .entry-term span:hover,
 .posts-grid .post__content .entry-term a:hover {
   color: #fff;
-  background-color: #1cafed;
+  background-color: #0054a4;
 }
 .posts-grid .post__content .entry-title {
   font-size: 24px;

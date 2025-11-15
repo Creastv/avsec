@@ -289,8 +289,10 @@ function avsec_customize_register($wp_customize)
         'type'    => 'select',
         'choices' => array(
             'primary' => __('Primary', 'avsec'),
+            'primary-dark' => __('Primary Dark', 'avsec'),
             'secondary' => __('Secondary', 'avsec'),
             'outline-primary' => __('Outline Primary', 'avsec'),
+            'outline-primary-dark' => __('Outline Primary Dark', 'avsec'),
             'outline-secondary' => __('Outline Secondary', 'avsec'),
         ),
     ));

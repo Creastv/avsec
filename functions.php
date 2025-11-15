@@ -61,7 +61,7 @@ function avsec_scripts()
     // Załaduj style i skrypty dla polecanych szkoleń (template part recomended-training)
     if (is_singular('szkolenia') || is_page_template('page-form.php')) {
         wp_enqueue_style('go-service', get_template_directory_uri() . '/blocks/service/service.min.css');
-        wp_enqueue_script('go-service-js', get_template_directory_uri() . '/blocks/service/service.js', array('jquery', 'avsec_swiper_js'), '4', true);
+        wp_enqueue_script('go-service-js', get_template_directory_uri() . '/assets/js/service.js', array('jquery', 'avsec_swiper_js'), '4', true);
     }
 }
 add_action('wp_enqueue_scripts', 'avsec_scripts');

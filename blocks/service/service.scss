@@ -7,10 +7,11 @@
   // }
 
   .swiper {
-    overflow: initial !important;
-    @media (max-width: $breakpoint-md) {
-      overflow: hidden !important;
-    }
+    padding: $spacing-md 0;
+    // overflow: initial !important;
+    // @media (max-width: $breakpoint-md) {
+    //   overflow: hidden !important;
+    // }
   }
   .swiper-slide {
     .b-service {

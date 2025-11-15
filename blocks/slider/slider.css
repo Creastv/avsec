@@ -205,7 +205,7 @@
   transform: translate(-50%, 5px);
   width: 1px;
   height: calc(100% - 30px);
-  background-color: #1cafed;
+  background-color: #0054a4;
   transition: all 0.3s ease;
 }
 @media (max-width: 576px) {
@@ -214,14 +214,14 @@
   }
 }
 .b-slider .swiper-pagination--home span.swiper-pagination-bullet-active .swiper-pagination-bullet-number {
-  color: #1cafed !important;
+  color: #0054a4 !important;
 }
 .b-slider .swiper-pagination--home span .swiper-pagination-bullet-number {
   font-size: 20px;
   color: #fff;
 }
 .b-slider .swiper-pagination--home .swiper-pagination-bullet-active {
-  border: 3px solid #1cafed;
+  border: 3px solid #0054a4;
 }
 
 .acf-block-preview .b-slider .swiper-wrapper .swiper-slide {

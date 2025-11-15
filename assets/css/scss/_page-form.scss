@@ -59,7 +59,7 @@
     position: sticky;
     top: 50px;
     padding: $spacing-lg;
-    background-color: $primary-color;
+    background-color: $primary-light;
     border-radius: $border-radius-lg;
     color: $background-color;
     * {
@@ -71,7 +71,7 @@
     }
     .wpcf7-submit {
       width: 100%;
-      background-color: $background-black;
+      background-color: $primary-color;
       color: $background-color;
     }
     .wpcf7-spinner {

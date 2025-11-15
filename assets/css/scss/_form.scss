@@ -327,17 +327,19 @@
   }
 
   &:disabled {
-    background-color: $background-black;
-    border-color: $background-black;
+    background-color: $primary-color;
+    border-color: $primary-color;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+    opacity: 0.8;
 
     &:hover {
-      background-color: $text-muted;
-      border-color: $text-muted;
+      background-color: $primary-color;
+      border-color: $primary-color;
       transform: none;
       box-shadow: none;
+      opacity: 0.5;
     }
   }
 }
