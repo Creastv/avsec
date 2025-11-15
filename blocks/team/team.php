@@ -40,7 +40,7 @@ $style = get_field('style');
                 <?php
                 $args = array(
                     'post_type'      => 'zespol',
-                    'posts_per_page' => 8,
+                    'posts_per_page' => -1,
                     'post_status'    => 'publish',
                     'paged'          => 1,
                     'orderby'        => 'date',
@@ -86,6 +86,11 @@ $style = get_field('style');
         var swiper = new Swiper(".mySwiper-team", {
             slidesPerView: 1,
             spaceBetween: 0,
+            speed: 1000,
+            // parallax: true,
+            autoplay: {
+                delay: 4000
+            },
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
@@ -109,8 +114,8 @@ $style = get_field('style');
                 },
             },
             navigation: {
-                nextEl: "#team-list-carousel .s-next",
-                prevEl: "#team-list-carousel .s-prev",
+                nextEl: "#team-list-carousel .s-prev",
+                prevEl: "#team-list-carousel .s-next",
             },
             pagination: {
                 el: ".swiper-pagination",

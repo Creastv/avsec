@@ -4,13 +4,16 @@
         var slider = new Swiper(".service-slider", {
               slidesPerView: 1,
               spaceBetween: 20,
-          loop: true,
-          lazy: true,
-          speed: 1000,
-          navigation: {
-        nextEl: ".s-button-next",
-        prevEl: ".s-button-prev",
-      },
+                loop: true,
+                speed: 1000,
+                // parallax: true,
+                autoplay: {
+                  delay: 4000
+                },
+                navigation: {
+                nextEl: ".s-button-next",
+                prevEl: ".s-button-prev",
+            },
           breakpoints: {
             640: {
                 slidesPerView: 1,
