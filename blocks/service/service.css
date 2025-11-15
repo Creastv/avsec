@@ -17,6 +17,12 @@
 /* Navigation */
 /* Cards */
 /* Tables */
+.b-services {
+  position: relative;
+  width: 100vw;
+  left: -50vw;
+  margin-left: 50%;
+}
 .b-services .swiper {
   padding: 1rem 0;
 }
@@ -69,13 +75,15 @@
   width: 100%;
   z-index: 2;
   bottom: 0;
-  padding: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   transition: all 0.3s ease;
 }
 .b-services .swiper-slide .b-service .b-service-conent h2 {
   font-size: 24px;
   color: #fff;
-  margin: 0;
   padding: 0;
   transition: all 0.3s ease;
 }
@@ -84,20 +92,52 @@
   text-decoration: none;
 }
 .b-services .swiper-slide .b-service .b-service-conent__button {
-  position: absolute;
-  bottom: -55px;
-  transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  margin-top: 0;
+}
+.b-services .swiper-slide .b-service .b-service-conent__button p {
+  transition: all 0.5s ease;
+  opacity: 0;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  transform: translateY(15px);
+}
+.b-services .swiper-slide .b-service .b-service-conent__button a {
+  transform: translateY(15px);
+  transition: all 0.5s ease;
+  opacity: 0;
+  font-size: 14px;
 }
 .b-services .swiper-slide .b-service:hover {
+  overflow: visible;
   box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
   border-color: #0054a4;
 }
-.b-services .swiper-slide .b-service:hover .b-service-conent__button {
-  bottom: 20px;
+.b-services .swiper-slide .b-service:hover .b-service-conent {
+  justify-content: flex-start;
+  padding: 20px;
 }
 .b-services .swiper-slide .b-service:hover .b-service-conent h2 {
-  transform: translate(0, -50px);
+  transform: translateY(-15px);
+  margin-bottom: 0px;
+}
+.b-services .swiper-slide .b-service:hover .b-service-conent__button {
+  max-height: 200px;
+  margin-top: 0;
+}
+.b-services .swiper-slide .b-service:hover .b-service-conent__button p {
+  opacity: 1;
+  transition: all 0.2s ease 0.2s;
+  transform: translateY(0px);
+}
+.b-services .swiper-slide .b-service:hover .b-service-conent__button a {
+  opacity: 1;
+  transition: all 0.2s ease 0.2s;
+  transform: translateY(0px);
 }
 .b-services .swiper-nav {
   position: absolute;

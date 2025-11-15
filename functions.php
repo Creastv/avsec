@@ -453,7 +453,7 @@ function wp_example_excerpt_length($length)
 }
 add_filter('excerpt_length', 'wp_example_excerpt_length');
 
-function custom_excerpt($length = 55, $more = '...')
+function custom_excerpt($length = 55, $more = '...', $show_read_more = true)
 {
     global $post;
 
@@ -461,8 +461,8 @@ function custom_excerpt($length = 55, $more = '...')
     if (has_excerpt($post->ID)) {
         $excerpt = get_the_excerpt();
         // Dodaj link "Czytaj więcej" po excerpt
-        if (!empty($excerpt)) {
-            $excerpt .= ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' ... Czytaj więcej', 'avsec') . '</a>';
+        if (!empty($excerpt) && $show_read_more) {
+            $excerpt .= ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' Czytaj więcej', 'avsec') . '</a>';
         }
     } else {
         // Pobranie treści posta bez HTML i shortcodów Divi
@@ -473,7 +473,12 @@ function custom_excerpt($length = 55, $more = '...')
         $words = explode(' ', $content, $length + 1);
         if (count($words) > $length) {
             array_pop($words);
-            $excerpt = implode(' ', $words) . ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' ... Czytaj więcej', 'avsec') . '</a>';
+            $excerpt = implode(' ', $words);
+            if ($show_read_more) {
+                $excerpt .= ' <a href="' . esc_url(get_permalink($post->ID)) . '">' . __(' Czytaj więcej', 'avsec') . '</a>';
+            } else {
+                $excerpt .= $more;
+            }
         } else {
             $excerpt = implode(' ', $words);
         }
