@@ -31,10 +31,10 @@ $trainings = new WP_Query($query_args);
 if (!$trainings->have_posts()) {
     $trainings = new WP_Query(array(
         'post_type' => 'szkolenia',
-        'posts_per_page' => 4,
+        'posts_per_page' => -1,
         'order' => 'DESC',
         'orderby' => 'rand',
-        // 'post__not_in' => array($current_id),
+        'post__not_in' => array($current_id),
     ));
 }
 
