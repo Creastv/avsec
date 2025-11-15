@@ -56,8 +56,9 @@ h6 {
 /* Paragraphs */
 p {
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.4;
   font-weight: $font-weight-normal;
+  color: $text-light;
 }
 
 /* Site title */
@@ -211,10 +212,7 @@ ul {
 li {
   color: $text-light;
 }
-strong,
-b {
-  font-weight: $font-weight-black;
-}
+
 ol {
   list-style-type: decimal;
 }
@@ -267,6 +265,7 @@ small {
 strong,
 b {
   font-weight: $font-weight-semibold;
+  color: $text-light;
 }
 
 em,

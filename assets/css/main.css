@@ -203,8 +203,9 @@ h6 {
 /* Paragraphs */
 p {
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.4;
   font-weight: 400;
+  color: #0a0a0a;
 }
 
 /* Site title */
@@ -352,11 +353,6 @@ li {
   color: #0a0a0a;
 }
 
-strong,
-b {
-  font-weight: 900;
-}
-
 ol {
   list-style-type: decimal;
 }
@@ -409,6 +405,7 @@ small {
 strong,
 b {
   font-weight: 600;
+  color: #0a0a0a;
 }
 
 em,
