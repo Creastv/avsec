@@ -91,7 +91,8 @@ $platform_button_style = get_theme_mod('platform_button_style', 'primary');
         <div class="search-modal-body">
             <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                 <div class="search-input-group">
-                    <input type="search" class="search-input" placeholder="Wpisz szukaną frazę..."
+                    <input type="search" class="search-input"
+                        placeholder="<?php echo esc_attr(__('Wpisz szukaną frazę...', 'avsec')); ?>"
                         value="<?php echo get_search_query(); ?>" name="s" autocomplete="off">
                     <button type="submit" class="search-submit">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
