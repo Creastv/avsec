@@ -222,6 +222,9 @@ function avsec_wpml_setup()
         if (!empty($szkolenia_archive_subtitle)) {
             icl_register_string('avsec', 'Szkolenia Archive Subtitle', $szkolenia_archive_subtitle);
         }
+
+        // Breadcrumbs strings
+        icl_register_string('avsec', 'Szkolenia', __('Szkolenia', 'avsec'));
     }
 }
 add_action('init', 'avsec_wpml_setup');
@@ -518,3 +521,61 @@ function avsec_cpt_archive_posts_per_page($query)
     }
 }
 add_action('pre_get_posts', 'avsec_cpt_archive_posts_per_page');
+
+// Dodaj breadcrumbs dla CPT szkolenia w Yoast SEO z obsługą WPML
+function avsec_add_szkolenia_breadcrumb($links)
+{
+    // Sprawdź, czy to pojedynczy post typu szkolenia
+    if (is_singular('szkolenia')) {
+        // Utwórz URL do archiwum szkoleń z obsługą WPML
+        $archive_url = '';
+
+        // Spróbuj użyć get_post_type_archive_link, który automatycznie obsługuje WPML
+        $archive_link = get_post_type_archive_link('szkolenia');
+
+        if ($archive_link) {
+            // Jeśli archiwum istnieje, użyj tego URL
+            $archive_url = $archive_link;
+        } else {
+            // Jeśli archiwum nie istnieje (has_archive = false), utwórz URL ręcznie
+            if (function_exists('icl_get_home_url')) {
+                // Jeśli WPML jest aktywny, użyj funkcji WPML do uzyskania poprawnego URL
+                $home_url = icl_get_home_url();
+                $archive_url = trailingslashit($home_url) . 'szkolenia/';
+            } else {
+                // Jeśli WPML nie jest aktywny, użyj standardowego home_url
+                $archive_url = home_url('/szkolenia/');
+            }
+
+            // Zastosuj filtr WPML dla URL (jeśli dostępny)
+            if (function_exists('icl_get_current_language')) {
+                $current_lang = icl_get_current_language();
+                $archive_url = apply_filters('wpml_permalink', $archive_url, $current_lang);
+            }
+        }
+
+        // Pobierz tłumaczenie nazwy "Szkolenia" dla danego języka
+        $archive_title = __('Szkolenia', 'avsec');
+        if (function_exists('icl_t')) {
+            // Spróbuj pobrać tłumaczenie z WPML String Translation
+            $translated_title = icl_t('avsec', 'Szkolenia', $archive_title);
+            if ($translated_title !== $archive_title) {
+                $archive_title = $translated_title;
+            }
+        }
+
+        // Utwórz nowy element breadcrumb dla archiwum
+        $archive_breadcrumb = array(
+            'url'  => $archive_url,
+            'text' => $archive_title,
+        );
+
+        // Wstaw element archiwum przed ostatnim elementem (aktualny post)
+        $last_element = array_pop($links);
+        $links[] = $archive_breadcrumb;
+        $links[] = $last_element;
+    }
+
+    return $links;
+}
+add_filter('wpseo_breadcrumb_links', 'avsec_add_szkolenia_breadcrumb');
