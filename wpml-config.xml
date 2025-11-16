@@ -20,6 +20,7 @@
         <custom-field action="translate">footer_menu_3_title</custom-field>
         <custom-field action="translate">contact_button_text</custom-field>
         <custom-field action="translate">platform_button_text</custom-field>
+        <custom-field action="translate">platform_button_url</custom-field>
         <custom-field action="translate">szkolenia_archive_subtitle</custom-field>
         
         <!-- Copy these fields (don't translate) -->
@@ -32,7 +33,6 @@
         <custom-field action="copy">footer_address</custom-field>
         <custom-field action="copy">header_email</custom-field>
         <custom-field action="copy">contact_button_url</custom-field>
-        <custom-field action="copy">platform_button_url</custom-field>
         <custom-field action="copy">platform_button_style</custom-field>
         <custom-field action="copy">social_linkedin</custom-field>
         <custom-field action="copy">social_facebook</custom-field>
@@ -61,6 +61,9 @@
             <key name="*" />
         </key>
         <key name="platform_button_text">
+            <key name="*" />
+        </key>
+        <key name="platform_button_url">
             <key name="*" />
         </key>
         <key name="szkolenia_archive_subtitle">

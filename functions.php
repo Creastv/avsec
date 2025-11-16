@@ -212,6 +212,11 @@ function avsec_wpml_setup()
             icl_register_string('avsec', 'Platform Button Text', $platform_button_text);
         }
 
+        $platform_button_url = get_theme_mod('platform_button_url');
+        if (!empty($platform_button_url)) {
+            icl_register_string('avsec', 'Platform Button URL', $platform_button_url);
+        }
+
         // Szkolenia Archive strings
         $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
         if (!empty($szkolenia_archive_subtitle)) {
