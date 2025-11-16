@@ -29,9 +29,9 @@ get_header(); ?>
             <?php endif; ?>
         <?php else : ?>
             <div class="text-center">
-                <h2>Brak wyników</h2>
-                <p>Przepraszamy, ale nic nie znaleziono dla wyszukiwanej frazy. Spróbuj ponownie z innymi słowami
-                    kluczowymi.</p>
+                <h2><?php _e('Brak wyników', 'avsec'); ?></h2>
+                <p><?php _e('Przepraszamy, ale nic nie znaleziono dla wyszukiwanej frazy. Spróbuj ponownie z innymi słowami kluczowymi.', 'avsec'); ?>
+                </p>
             </div>
         <?php endif; ?>
     </div>
