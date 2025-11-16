@@ -7,7 +7,7 @@ $display = get_field('wylacz_partnerow');
     <div class="info-partners__logos">
         <div class="container-full">
             <p class="partners-title">
-                <b> <?php echo __('Nasze partnerzy', 'avsec'); ?></b>
+                <b> <?php echo __('Nasi partnerzy', 'avsec'); ?></b>
             </p>
             <div class="swiper js-pm">
                 <div class=" swiper-wrapper">

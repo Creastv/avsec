@@ -1737,6 +1737,7 @@ mark {
   stroke-opacity: 1;
 }
 .footer-column-brand .footer-description p {
+  color: #fff;
   font-size: 14px;
   opacity: 0.6;
 }
@@ -1854,7 +1855,7 @@ mark {
   opacity: 0.6;
 }
 .footer-menu ul li a:hover {
-  color: #0054a4 !important;
+  color: #1cafed !important;
   opacity: 1;
 }
 
@@ -1881,14 +1882,17 @@ mark {
 }
 .site-info p {
   margin-bottom: 0.5rem;
-  color: #0a0a0a;
+  color: #fff;
   font-size: 12px;
+}
+.site-info p b {
+  color: #1cafed !important;
 }
 .site-info p:last-child {
   margin-bottom: 0;
 }
 .site-info p a {
-  color: #0a0a0a;
+  color: #1cafed !important;
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 12px;
@@ -1917,14 +1921,14 @@ mark {
   padding: 0;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item a {
-  color: #0a0a0a;
+  color: #fff;
   text-decoration: none;
   font-size: 12px;
   transition: color 0.3s ease;
   padding: 1rem 1rem;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item a:hover {
-  color: #0054a4;
+  color: #1cafed;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item::before {
   content: "";
@@ -2173,6 +2177,7 @@ mark {
 
 .info-partners__logos {
   padding: 30px 0;
+  border-top: 1px solid #ddd;
 }
 @media (max-width: 768px) {
   .info-partners__logos {

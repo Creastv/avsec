@@ -1,5 +1,6 @@
 .info-partners__logos {
   padding: 30px 0;
+  border-top: 1px solid $border-color;
   @media (max-width: $breakpoint-md) {
     padding: $spacing-lg 0;
   }

@@ -66,6 +66,7 @@
   }
   .footer-description {
     p {
+      color: #fff;
       font-size: 14px;
       opacity: 0.6;
       // color: $text-light;
@@ -202,7 +203,7 @@
         opacity: 0.6;
 
         &:hover {
-          color: $primary-color !important;
+          color: $primary-light !important;
           opacity: 1;
         }
       }
@@ -229,15 +230,17 @@
 
   p {
     margin-bottom: $spacing-sm;
-    color: $text-light;
+    color: #fff;
     font-size: 12px;
-
+    b {
+      color: $primary-light !important;
+    }
     &:last-child {
       margin-bottom: 0;
     }
 
     a {
-      color: $text-light;
+      color: $primary-light !important;
       text-decoration: none;
       transition: color $transition-base;
       font-size: 12px;
@@ -269,13 +272,13 @@
       padding: 0;
 
       a {
-        color: $text-light;
+        color: #fff;
         text-decoration: none;
         font-size: 12px;
         transition: color $transition-base;
         padding: $spacing-md $spacing-md;
         &:hover {
-          color: $primary-color;
+          color: $primary-light;
         }
       }
       &::before {
