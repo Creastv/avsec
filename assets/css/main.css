@@ -1743,15 +1743,19 @@ mark {
 }
 .footer-column-brand .footer-contact {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
 }
 .footer-column-brand .footer-contact .contact-item {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .footer-column-brand .footer-contact .contact-item a,
 .footer-column-brand .footer-contact .contact-item span {
+  display: block;
   font-size: 14px;
   color: #fff;
   text-decoration: none;

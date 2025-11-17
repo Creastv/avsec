@@ -74,6 +74,7 @@
   }
   .footer-contact {
     display: flex;
+    align-items: center;
     // flex-wrap: wrap;
     justify-content: space-between;
     gap: $spacing-sm;
@@ -81,8 +82,11 @@
     .contact-item {
       display: flex;
       gap: $spacing-sm;
+      align-items: center;
+      margin-bottom: 10px;
       a,
       span {
+        display: block;
         font-size: 14px;
         // color: $text-light;
         color: $background-color;

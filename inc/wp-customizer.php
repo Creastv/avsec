@@ -88,13 +88,25 @@ function avsec_customize_register($wp_customize)
     // Footer Address
     $wp_customize->add_setting('footer_address', array(
         'default'           => '',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'avsec_sanitize_address_with_br',
     ));
 
     $wp_customize->add_control('footer_address', array(
         'label'   => __('Footer Address', 'avsec'),
         'section' => 'footer_brand',
-        'type'    => 'text',
+        'type'    => 'textarea',
+    ));
+
+    // Footer Address URL
+    $wp_customize->add_setting('footer_address_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('footer_address_url', array(
+        'label'   => __('Footer Address URL', 'avsec'),
+        'section' => 'footer_brand',
+        'type'    => 'url',
     ));
 
     // Contact Button Text
@@ -329,4 +341,15 @@ function avsec_get_menu_choices()
 
     return $choices;
 }
+
+// Sanitize address allowing <br> tags
+function avsec_sanitize_address_with_br($value)
+{
+    // Allow only <br> and <br/> tags
+    $allowed_tags = array(
+        'br' => array(),
+    );
+    return wp_kses($value, $allowed_tags);
+}
+
 add_action('customize_register', 'avsec_customize_register');
