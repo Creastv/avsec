@@ -34,7 +34,7 @@ if (is_page() && function_exists('get_field')) {
 if (is_home() || is_front_page()) {
     $title = sprintf(
         /* translators: %s: search term. */
-        esc_html__('Aktualności', 'avsec'),
+        esc_html__('Avsec news', 'avsec'),
     );
     $subtitle = '';
 } elseif (is_single()) {
