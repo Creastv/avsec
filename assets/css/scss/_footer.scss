@@ -232,6 +232,7 @@
     margin-bottom: $spacing-sm;
     color: #fff;
     font-size: 12px;
+    opacity: 0.6;
     b {
       color: $primary-light !important;
     }
@@ -277,8 +278,10 @@
         font-size: 12px;
         transition: color $transition-base;
         padding: $spacing-md $spacing-md;
+        opacity: 0.6;
         &:hover {
           color: $primary-light;
+          opacity: 1;
         }
       }
       &::before {

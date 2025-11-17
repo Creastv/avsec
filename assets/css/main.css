@@ -1884,6 +1884,7 @@ mark {
   margin-bottom: 0.5rem;
   color: #fff;
   font-size: 12px;
+  opacity: 0.6;
 }
 .site-info p b {
   color: #1cafed !important;
@@ -1926,9 +1927,11 @@ mark {
   font-size: 12px;
   transition: color 0.3s ease;
   padding: 1rem 1rem;
+  opacity: 0.6;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item a:hover {
   color: #1cafed;
+  opacity: 1;
 }
 .footer-bottom-menu .footer-bottom-menu-list .menu-item::before {
   content: "";
