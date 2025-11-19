@@ -20,7 +20,7 @@ var swiper = new Swiper(".js-pm", {
         // spaceBetween: 20
       },
       768: {
-        slidesPerView: 53
+        slidesPerView: 5
         // spaceBetween: 30
       },
       1024: {
@@ -28,7 +28,7 @@ var swiper = new Swiper(".js-pm", {
         // spaceBetween: 50
       },
       1366: {
-        slidesPerView: 5,
+        slidesPerView: 8,
         // spaceBetween: 50
         // slidesPerView: "auto",
       }
