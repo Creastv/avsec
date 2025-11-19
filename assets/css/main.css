@@ -2205,6 +2205,11 @@ mark {
   height: 80px;
   -o-object-fit: contain;
      object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+.info-partners__logos .item img:hover {
+  filter: grayscale(0%);
 }
 
 /* ========================================
