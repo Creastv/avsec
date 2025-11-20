@@ -15,40 +15,40 @@ $custom_desc_szkolenia = get_field('opis_przed_zdjeciem_');
 <main class="site-main">
     <div class="container">
         <?php while (have_posts()) : the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" class="page page-form">
-                <div class="page-form__grid">
-                    <div class="page-form__content">
-                        <header
-                            class="page-form__header <?php echo !is_singular('zespol') && has_post_thumbnail() ? 'has-thumbnail' : ''; ?>">
-                            <?php if (function_exists('yoast_breadcrumb')) : ?>
-                                <nav class="breadcrumbs" aria-label="Breadcrumbs">
-                                    <?php yoast_breadcrumb('', ''); ?>
-                                </nav>
-                            <?php endif; ?>
-                            <?php the_title('<h1 class="page-form__title">', '</h1>'); ?>
+        <article id="post-<?php the_ID(); ?>" class="page page-form">
+            <div class="page-form__grid">
+                <div class="page-form__content">
+                    <header
+                        class="page-form__header <?php echo !is_singular('zespol') && has_post_thumbnail() ? 'has-thumbnail' : ''; ?>">
+                        <?php if (function_exists('yoast_breadcrumb')) : ?>
+                        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+                            <?php yoast_breadcrumb('', ''); ?>
+                        </nav>
+                        <?php endif; ?>
+                        <?php the_title('<h1 class="page-form__title">', '</h1>'); ?>
 
-                            <?php if ($custom_desc || $custom_desc_szkolenia) : ?>
-                                <div class="page-form__subtitle">
-                                    <?php echo $custom_desc ? $custom_desc : $custom_desc_szkolenia; ?>
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!is_singular('zespol')): ?>
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <div class="post-thumbnail">
-                                        <?php the_post_thumbnail('large'); ?>
-                                    </div>
-                                <?php else: ?>
-                                    <div class="post-thumbnail">
-                                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/thumbnail.png'); ?>"
-                                            alt="<?php echo esc_attr(get_the_title()); ?>" class="placeholder-thumb" />
-                                    </div>
-                                <?php endif; ?>
-                            <?php endif; ?>
-                        </header>
+                        <?php if ($custom_desc || $custom_desc_szkolenia) : ?>
+                        <div class="page-form__subtitle">
+                            <?php echo $custom_desc ? $custom_desc : $custom_desc_szkolenia; ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if (!is_singular('zespol')): ?>
+                        <?php if (has_post_thumbnail()) : ?>
+                        <div class="post-thumbnail">
+                            <?php the_post_thumbnail('large'); ?>
+                        </div>
+                        <?php else: ?>
+                        <div class="post-thumbnail">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/thumbnail.png'); ?>"
+                                alt="<?php echo esc_attr(get_the_title()); ?>" class="placeholder-thumb" />
+                        </div>
+                        <?php endif; ?>
+                        <?php endif; ?>
+                    </header>
 
 
-                        <div class="post-content">
-                            <?php
+                    <div class="post-content">
+                        <?php
                             the_content();
 
                             wp_link_pages(array(
@@ -56,20 +56,20 @@ $custom_desc_szkolenia = get_field('opis_przed_zdjeciem_');
                                 'after'  => '</div>',
                             ));
                             ?>
-                        </div>
                     </div>
-
-                    <aside class="page-form__sidebar" aria-label="Formularz kontaktowy">
-                        <div class="page-form__sticky">
-                            <?php echo do_shortcode('[contact-form-7 id="7507adf" title="Formularz na podstronach"]'); ?>
-                        </div>
-                    </aside>
                 </div>
-            </article>
+
+                <aside class="page-form__sidebar" aria-label="Formularz kontaktowy">
+                    <div class="page-form__sticky">
+                        <?php echo do_shortcode('[contact-form-7 id="7507adf" title="Formularz na podstronach"]'); ?>
+                    </div>
+                </aside>
+            </div>
+        </article>
         <?php endwhile; ?>
     </div>
     <?php if (is_singular('szkolenia')): ?>
-        <?php get_template_part('template-parts/parts/recomended-training'); ?>
+    <?php get_template_part('template-parts/parts/recomended-training'); ?>
 
     <?php endif; ?>
 </main>

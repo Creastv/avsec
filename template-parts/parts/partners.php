@@ -3,7 +3,7 @@ $logos = get_field('logos', 'options');
 $display = get_field('wylacz_partnerow');
 ?>
 
-<?php if ($logos && !is_singular(array('post', 'szkolenia')) && !$display && !is_page_template('page-form.php')) : ?>
+<?php if ($logos && !is_singular(array('post', 'szkolenia')) && !$display && is_page_template('page-form.php')) : ?>
     <div class="info-partners__logos">
         <div class="container-full">
             <p class="partners-title">
