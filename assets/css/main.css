@@ -2851,7 +2851,7 @@ mark {
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 0;
-  color: black;
+  color: #fff;
 }
 .page-form form label > span,
 .page-form form .wpcf7 label > span {
