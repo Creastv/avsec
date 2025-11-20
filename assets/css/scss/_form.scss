@@ -128,7 +128,7 @@
   font-size: $font-size-base;
   font-family: $font-family-primary;
   color: $text-color;
-  background-color: $background-color;
+  background-color: $background-color !important;
   border: 1px solid $input-border-color;
   border-radius: $input-border-radius;
   transition: all $transition-base;
@@ -382,6 +382,7 @@
 .wpcf7-acceptance .wpcf7-list-item label {
   margin: 0;
   display: flex;
+  color: black;
 }
 /* Individual Field Validation Messages */
 .wpcf7-not-valid-tip {

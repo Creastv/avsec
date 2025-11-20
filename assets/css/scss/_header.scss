@@ -95,6 +95,9 @@
     @media (max-width: $breakpoint-xl) {
       max-height: 100px;
     }
+    @media (max-width: $breakpoint-sm) {
+      margin-top: $spacing-md;
+    }
   }
 }
 

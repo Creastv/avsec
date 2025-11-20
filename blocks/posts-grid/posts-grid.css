@@ -168,7 +168,7 @@
   border-radius: 8px;
   overflow: hidden;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .posts-grid .post-vertical {
     flex-wrap: wrap;
     gap: 0px;
@@ -177,7 +177,7 @@
 .posts-grid .post-vertical .post__img {
   padding-right: 0;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .posts-grid .post-vertical .post__img {
     width: 100%;
   }
