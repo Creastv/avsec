@@ -3,7 +3,7 @@
    ======================================== */
 
 .site-footer {
-  background-color: $background-black;
+  background-color: $background-light;
   color: $background-color;
   // margin-top: $spacing-xxl;
   padding: calc($spacing-xl + 30px) 0px $spacing-xl 0px;
@@ -66,9 +66,9 @@
   }
   .footer-description {
     p {
-      color: #fff;
+      // color: #fff;
       font-size: 14px;
-      opacity: 0.6;
+      opacity: 1;
       // color: $text-light;
     }
   }
@@ -78,7 +78,16 @@
     // flex-wrap: wrap;
     justify-content: space-between;
     gap: $spacing-sm;
-
+    .footer-contact-button {
+      a {
+        color: $primary-color;
+        border-color: $primary-color;
+        &:hover {
+          background-color: $primary-color;
+          color: $background-color;
+        }
+      }
+    }
     .contact-item {
       display: flex;
       gap: $spacing-sm;
@@ -88,8 +97,8 @@
       span {
         display: block;
         font-size: 14px;
-        // color: $text-light;
-        color: $background-color;
+        color: $text-light;
+        // color: $background-color;
         // opacity: 0.6;
         text-decoration: none;
         transition: color $transition-base;
@@ -105,7 +114,7 @@
           path {
             transition: stroke $transition-base;
             // stroke-opacity: 0.6;
-            // stroke: $background-color;
+            stroke: $primary-color;
           }
           &:hover {
             path {
@@ -179,7 +188,7 @@
   }
   h4 {
     margin-bottom: $spacing-sm;
-    color: $background-color;
+    // color: $background-color;
     font-size: $font-size-sm;
     font-weight: $font-weight-bold;
     text-transform: uppercase;
@@ -202,9 +211,10 @@
         font-size: 14px;
         line-height: 1.1;
         padding: 8px 0;
-        color: $background-color;
+        // color: $background-color;
+        color: $text-light;
         text-decoration: none;
-        opacity: 0.6;
+        opacity: 1;
 
         &:hover {
           color: $primary-light !important;
@@ -216,11 +226,12 @@
 }
 /* Site info */
 .site-info {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid $border-color;
   padding-top: $spacing-lg;
   margin-top: $spacing-xl;
   text-align: center;
   display: flex;
+  align-items: center;
   // flex-direction: column;
   justify-content: space-between;
   gap: $spacing-lg;
@@ -234,18 +245,18 @@
 
   p {
     margin-bottom: $spacing-sm;
-    color: #fff;
+    // color: #fff;
     font-size: 12px;
-    opacity: 0.6;
+    opacity: 1;
     b {
-      color: $primary-light !important;
+      color: $text-color !important;
     }
     &:last-child {
       margin-bottom: 0;
     }
 
     a {
-      color: $primary-light !important;
+      color: $text-color !important;
       text-decoration: none;
       transition: color $transition-base;
       font-size: 12px;
@@ -277,12 +288,13 @@
       padding: 0;
 
       a {
-        color: #fff;
+        // color: #fff;
+        color: $text-light;
         text-decoration: none;
         font-size: 12px;
         transition: color $transition-base;
         padding: $spacing-md $spacing-md;
-        opacity: 0.6;
+        opacity: 1;
         &:hover {
           color: $primary-light;
           opacity: 1;
