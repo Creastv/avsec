@@ -63,6 +63,12 @@ if (!defined('ABSPATH')) {
 
     <div class="footer-description">
         <?php
+        $description_footer = avsec_get_theme_mod('footer_description');
+        if ($description_footer) {
+            echo '<p>' . $description_footer . '</p>';
+        }
+        ?>
+        <?php
         $description = avsec_get_theme_mod('description');
         if ($description) {
             echo '<p>' . $description . '</p>';
