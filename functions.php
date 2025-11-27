@@ -329,3 +329,28 @@ function avsec_add_szkolenia_breadcrumb($links)
     return $links;
 }
 add_filter('wpseo_breadcrumb_links', 'avsec_add_szkolenia_breadcrumb');
+
+// Wymusza tłumaczenie etykiety "Home" w breadcrumb Yoast
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    if (! is_array($links) || empty($links)) {
+        return $links;
+    }
+
+    // pobierz aktualny język (WPML) — ICL_LANGUAGE_CODE lub domyślnie get_locale()
+    $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : substr(get_locale(), 0, 2);
+
+    // dopasuj etykietę dla języków; dodaj kolejne języki w razie potrzeby
+    $home_labels = [
+        'pl' => 'Strona główna',
+        'en' => 'Home',
+        'de' => 'Heim', // przykład
+        // 'de' => 'Startseite',
+    ];
+
+    $label = isset($home_labels[$lang]) ? $home_labels[$lang] : $home_labels['en'];
+
+    // pierwszy element breadcrumb to zwykle link do strony głównej
+    $links[0]['text'] = $label;
+
+    return $links;
+}, 10);
