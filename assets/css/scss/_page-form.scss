@@ -19,8 +19,8 @@
     &:before {
       content: "";
       position: absolute;
-      left: -150%;
-      width: 400%;
+      left: var(--before-left, -150%);
+      width: var(--before-width, 400%);
       height: calc(100% + 2rem) !important;
       background-color: $background-light;
       z-index: -1;

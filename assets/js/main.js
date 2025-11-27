@@ -229,3 +229,49 @@ if (jQuery(window).width() > 500) {
         transition: 'translate 0.1s ease' // CSS transition, added on elements where type:'foreground' 
     });
   }
+
+// Full width :before for .page-form .has-thumbnail
+(function() {
+    'use strict';
+    
+    function setFullWidthBefore() {
+        const element = document.querySelector('.page-form .has-thumbnail');
+        
+        if (!element) return;
+        
+        // Prevent horizontal scroll on page-form pages
+        const pageForm = document.querySelector('.page-form');
+        if (pageForm) {
+            document.body.style.overflowX = 'hidden';
+            document.documentElement.style.overflowX = 'hidden';
+        }
+        
+        // Get element position relative to viewport (without scroll)
+        const rect = element.getBoundingClientRect();
+        
+        // Use clientWidth instead of innerWidth to exclude scrollbar
+        const browserWidth = document.documentElement.clientWidth;
+        
+        // Calculate how much to extend left (negative value)
+        // Use rect.left which is the distance from viewport left edge
+        const leftExtension = -rect.left;
+        
+        // Set CSS custom properties
+        element.style.setProperty('--before-left', leftExtension + 'px');
+        element.style.setProperty('--before-width', browserWidth + 'px');
+    }
+    
+    // Run on load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setFullWidthBefore);
+    } else {
+        setFullWidthBefore();
+    }
+    
+    // Run on resize with debounce
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(setFullWidthBefore, 250);
+    });
+})();

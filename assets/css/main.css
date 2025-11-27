@@ -2521,11 +2521,10 @@ mark {
 /* Main content area */
 .site-main {
   padding: 0 0 3rem 0;
-  overflow-x: hidden;
   position: relative;
 }
 
-.home .site-main {
+.site-main:not(.page-form-page) {
   overflow-x: hidden;
 }
 
@@ -2780,8 +2779,8 @@ mark {
 .page-form .page-form__header:before {
   content: "";
   position: absolute;
-  left: -150%;
-  width: 400%;
+  left: var(--before-left, -150%);
+  width: var(--before-width, 400%);
   height: calc(100% + 2rem) !important;
   background-color: #f8f8f8;
   z-index: -1;

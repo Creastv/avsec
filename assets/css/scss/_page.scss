@@ -7,7 +7,7 @@
   // min-height: calc(100vh - 200px);
   padding: 0 0 $spacing-xxl 0;
   // overflow-y: hidden;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   position: relative;
 
   // .container {
@@ -20,7 +20,7 @@
   //   }
   // }
 }
-.home .site-main {
+.site-main:not(.page-form-page) {
   overflow-x: hidden;
 }
 .single-post .page-title {

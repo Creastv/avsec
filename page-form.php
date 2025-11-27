@@ -12,7 +12,7 @@ $custom_desc = get_field('desc');
 $custom_desc_szkolenia = get_field('opis_przed_zdjeciem_');
 ?>
 
-<main class="site-main">
+<main class="site-main page-form-page">
     <div>
         <div class="container">
             <?php while (have_posts()) : the_post(); ?>
