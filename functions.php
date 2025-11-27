@@ -175,341 +175,57 @@ function avsec_default_menu()
 // Include customizer settings
 require get_template_directory() . '/inc/wp-customizer.php';
 
-// WPML Integration
-function avsec_wpml_setup()
+/**
+ * WPML - Register Customizer strings for translation
+ */
+function avsec_register_wpml_strings()
 {
-    // Register customizer strings for WPML String Translation
-    if (function_exists('icl_register_string')) {
-        // Footer Brand strings
-        $footer_description = get_theme_mod('footer_description');
-        if (!empty($footer_description)) {
-            icl_register_string('avsec', 'Footer Description', $footer_description);
-        }
-
-        $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
-        if (!empty($footer_menu_1_title)) {
-            icl_register_string('avsec', 'Footer Menu 1 Title', $footer_menu_1_title);
-        }
-
-        $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
-        if (!empty($footer_menu_2_title)) {
-            icl_register_string('avsec', 'Footer Menu 2 Title', $footer_menu_2_title);
-        }
-
-        $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
-        if (!empty($footer_menu_3_title)) {
-            icl_register_string('avsec', 'Footer Menu 3 Title', $footer_menu_3_title);
-        }
-
-        $contact_button_text = get_theme_mod('contact_button_text');
-        if (!empty($contact_button_text)) {
-            icl_register_string('avsec', 'Contact Button Text', $contact_button_text);
-        }
-
-        // Header Extras strings
-        $platform_button_text = get_theme_mod('platform_button_text');
-        if (!empty($platform_button_text)) {
-            icl_register_string('avsec', 'Platform Button Text', $platform_button_text);
-        }
-
-        $platform_button_url = get_theme_mod('platform_button_url');
-        if (!empty($platform_button_url)) {
-            icl_register_string('avsec', 'Platform Button URL', $platform_button_url);
-        }
-
-        // Szkolenia Archive strings
-        $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
-        if (!empty($szkolenia_archive_subtitle)) {
-            icl_register_string('avsec', 'Szkolenia Archive Subtitle', $szkolenia_archive_subtitle);
-        }
-
-        // Breadcrumbs strings
-        icl_register_string('avsec', 'Szkolenia', __('Szkolenia', 'avsec'));
-    }
-}
-add_action('init', 'avsec_wpml_setup');
-
-// Update WPML strings when customizer settings are saved
-function avsec_wpml_update_strings_on_save()
-{
-    // Only run if WPML is active
     if (!function_exists('icl_register_string')) {
         return;
     }
 
-    // Get current language - this is the language in which customizer is being saved
-    $current_lang = function_exists('icl_get_current_language') ? icl_get_current_language() : '';
-    $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
+    // Lista ustawień do tłumaczenia
+    $translatable_settings = array(
+        'footer_description',
+        'description',
+        'footer_address',
+        'footer_address_url',
+        'contact_button_text',
+        'contact_button_url',
+        'footer_menu_1_title',
+        'footer_menu_2_title',
+        'footer_menu_3_title',
+        'platform_button_text',
+        'platform_button_url',
+        'szkolenia_archive_subtitle',
+    );
 
-    // If we're saving in default language, update strings with current values
-    // For other languages, WPML String Translation should handle translations
-    if ($current_lang === $default_lang || empty($current_lang) || empty($default_lang)) {
-        global $wpdb;
-
-        // Helper function to update string value in WPML
-        // This function will properly update existing strings in WPML database
-        $update_string = function ($context_name, $new_value) use ($wpdb) {
-            $new_value = $new_value ? $new_value : '';
-
-            // First, try to find existing string in WPML database
-            $string_id = $wpdb->get_var($wpdb->prepare(
-                "SELECT id FROM {$wpdb->prefix}icl_strings 
-                WHERE context = %s AND name = %s",
-                'avsec',
-                $context_name
-            ));
-
-            if ($string_id) {
-                // String exists - update its value
-                $wpdb->update(
-                    $wpdb->prefix . 'icl_strings',
-                    array('value' => $new_value),
-                    array('id' => $string_id),
-                    array('%s'),
-                    array('%d')
-                );
-
-                // If value is empty, delete all translations
-                // If value changed, mark translations as outdated
-                if (empty($new_value)) {
-                    // Delete all translations for this string
-                    $wpdb->delete(
-                        $wpdb->prefix . 'icl_string_translations',
-                        array('string_id' => $string_id),
-                        array('%d')
-                    );
-                } else {
-                    // Mark translations as outdated if value changed
-                    $wpdb->update(
-                        $wpdb->prefix . 'icl_string_translations',
-                        array('status' => ICL_STRING_TRANSLATION_NOT_TRANSLATED),
-                        array('string_id' => $string_id),
-                        array('%d'),
-                        array('%d')
-                    );
-                }
-            } else {
-                // String doesn't exist - register it only if not empty
-                if (!empty($new_value)) {
-                    icl_register_string('avsec', $context_name, $new_value);
-                }
-            }
-        };
-
-        // Re-register/update all customizer strings with current values
-        // This ensures WPML has the latest values after customizer save
-        $footer_description = get_theme_mod('footer_description');
-        $update_string('Footer Description', $footer_description);
-
-        $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
-        $update_string('Footer Menu 1 Title', $footer_menu_1_title);
-
-        $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
-        $update_string('Footer Menu 2 Title', $footer_menu_2_title);
-
-        $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
-        $update_string('Footer Menu 3 Title', $footer_menu_3_title);
-
-        $contact_button_text = get_theme_mod('contact_button_text');
-        $update_string('Contact Button Text', $contact_button_text);
-
-        $platform_button_text = get_theme_mod('platform_button_text');
-        $update_string('Platform Button Text', $platform_button_text);
-
-        $platform_button_url = get_theme_mod('platform_button_url');
-        $update_string('Platform Button URL', $platform_button_url);
-
-        $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
-        $update_string('Szkolenia Archive Subtitle', $szkolenia_archive_subtitle);
-    }
-}
-add_action('customize_save_after', 'avsec_wpml_update_strings_on_save');
-
-// Helper function to get translated customizer string
-function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
-{
-    // If WPML is not active, return value directly
-    if (!function_exists('icl_t')) {
-        return get_theme_mod($mod_name, $default);
-    }
-
-    // Get current language and default language
-    $current_lang = avsec_get_current_language();
-    $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
-
-    // If we're in Customizer admin panel, ALWAYS return value from default language
-    // This prevents confusion where admin sees translated text in customizer
-    // and can't edit the original value
-    if (is_customize_preview() || (is_admin() && strpos($_SERVER['REQUEST_URI'], 'customize.php') !== false)) {
-        global $sitepress;
-        if ($sitepress && method_exists($sitepress, 'switch_lang') && !empty($default_lang)) {
-            $original_lang = $sitepress->get_current_language();
-            $sitepress->switch_lang($default_lang, true);
-            $value = get_theme_mod($mod_name, $default);
-            $sitepress->switch_lang($original_lang, true);
-            return $value;
-        } else {
-            return get_theme_mod($mod_name, $default);
+    foreach ($translatable_settings as $setting) {
+        $value = get_theme_mod($setting, '');
+        if (!empty($value)) {
+            icl_register_string('Theme Customizer', $setting, $value);
         }
     }
-
-    // Always get value from default language first (this is the source of truth)
-    $default_value = $default;
-    if (!empty($default_lang)) {
-        global $sitepress;
-        if ($sitepress && method_exists($sitepress, 'switch_lang')) {
-            $original_lang = $sitepress->get_current_language();
-            $sitepress->switch_lang($default_lang, true);
-            $default_value = get_theme_mod($mod_name, $default);
-            $sitepress->switch_lang($original_lang, true);
-        } else {
-            // Fallback if sitepress is not available
-            $default_value = get_theme_mod($mod_name, $default);
-        }
-    } else {
-        $default_value = get_theme_mod($mod_name, $default);
-    }
-
-    // For default language, always return value from default language customizer
-    if ($current_lang === $default_lang || empty($default_lang) || empty($current_lang)) {
-        // Make sure string is registered with current value for WPML String Translation
-        if (!empty($default_value)) {
-            icl_register_string('avsec', $context_name, $default_value);
-        }
-        return $default_value;
-    }
-
-    // For other languages, get translation from WPML String Translation
-    // Make sure string is registered with default language value
-    if (!empty($default_value)) {
-        icl_register_string('avsec', $context_name, $default_value);
-    }
-
-    // If original value is empty, return empty (don't return translation for empty string)
-    if (empty($default_value)) {
-        return '';
-    }
-
-    // Try newer WPML API first
-    if (function_exists('apply_filters')) {
-        $translated = apply_filters('wpml_translate_single_string', $default_value, 'avsec', $context_name);
-        // If translation exists and is different from original, use it
-        if ($translated !== $default_value && !empty($translated)) {
-            return $translated;
-        }
-    }
-
-    // Fallback to icl_t()
-    $translated = icl_t('avsec', $context_name, $default_value);
-
-    return $translated;
 }
+add_action('init', 'avsec_register_wpml_strings');
 
-// Get current language code
-function avsec_get_current_language()
+/**
+ * Get translated theme_mod value
+ * 
+ * @param string $setting Setting name
+ * @param mixed $default Default value
+ * @return mixed Translated value or default
+ */
+function avsec_get_theme_mod($setting, $default = '')
 {
-    if (function_exists('icl_get_current_language')) {
-        return icl_get_current_language();
-    }
-    return get_locale();
-}
+    $value = get_theme_mod($setting, $default);
 
-// Get home URL for current language
-function avsec_get_home_url()
-{
-    if (function_exists('icl_get_home_url')) {
-        return icl_get_home_url();
-    }
-    return home_url('/');
-}
-
-// Check if WPML is active
-function avsec_is_wpml_active()
-{
-    return defined('ICL_SITEPRESS_VERSION');
-}
-
-// Get translated attachment ID (for logo, images, etc.)
-function avsec_get_translated_attachment_id($attachment_id)
-{
-    if (empty($attachment_id)) {
-        return $attachment_id;
+    if (!empty($value) && function_exists('icl_t')) {
+        $value = icl_t('Theme Customizer', $setting, $value);
     }
 
-    // If WPML is active, get translated attachment ID
-    if (function_exists('icl_object_id')) {
-        // Try to get translated attachment
-        $translated_id = icl_object_id($attachment_id, 'attachment', true);
-
-        // If translation exists, use it; otherwise use original
-        if ($translated_id && $translated_id != $attachment_id) {
-            return $translated_id;
-        }
-    }
-
-    // WPML Media may not be configured - return original ID
-    return $attachment_id;
+    return $value;
 }
-
-// Get custom logo with WPML support
-function avsec_get_custom_logo_id()
-{
-    $logo_id = get_theme_mod('custom_logo');
-
-    // If logo is empty and WPML is active, try to get from default language
-    if (empty($logo_id) && function_exists('icl_get_default_language')) {
-        global $sitepress;
-        if ($sitepress) {
-            $current_lang = $sitepress->get_current_language();
-            $default_lang = icl_get_default_language();
-
-            // If we're not in default language
-            if ($current_lang !== $default_lang) {
-                // Switch to default language temporarily
-                $sitepress->switch_lang($default_lang);
-
-                // Get logo from default language
-                $logo_id = get_theme_mod('custom_logo');
-
-                // Switch back
-                $sitepress->switch_lang($current_lang);
-            }
-        }
-    }
-
-    return avsec_get_translated_attachment_id($logo_id);
-}
-
-// Force footer logo to use default language if not set
-function avsec_get_footer_logo_id()
-{
-    $logo_id = get_theme_mod('footer_logo');
-
-    // If logo is empty and WPML is active, try to get from default language
-    if (empty($logo_id) && function_exists('icl_get_default_language')) {
-        global $sitepress;
-        if ($sitepress) {
-            $current_lang = $sitepress->get_current_language();
-            $default_lang = icl_get_default_language();
-
-            // If we're not in default language
-            if ($current_lang !== $default_lang) {
-                // Switch to default language temporarily
-                $sitepress->switch_lang($default_lang);
-
-                // Get logo from default language
-                $logo_id = get_theme_mod('footer_logo');
-
-                // Switch back
-                $sitepress->switch_lang($current_lang);
-            }
-        }
-    }
-
-    return avsec_get_translated_attachment_id($logo_id);
-}
-
-
 
 // Excerpt changing 3 dots
 function new_excerpt_more($more)
@@ -586,47 +302,17 @@ function avsec_cpt_archive_posts_per_page($query)
 }
 add_action('pre_get_posts', 'avsec_cpt_archive_posts_per_page');
 
-// Dodaj breadcrumbs dla CPT szkolenia w Yoast SEO z obsługą WPML
+// Dodaj breadcrumbs dla CPT szkolenia w Yoast SEO
 function avsec_add_szkolenia_breadcrumb($links)
 {
     // Sprawdź, czy to pojedynczy post typu szkolenia
     if (is_singular('szkolenia')) {
-        // Utwórz URL do archiwum szkoleń z obsługą WPML
-        $archive_url = '';
-
-        // Spróbuj użyć get_post_type_archive_link, który automatycznie obsługuje WPML
+        // Utwórz URL do archiwum szkoleń
         $archive_link = get_post_type_archive_link('szkolenia');
+        $archive_url = $archive_link ? $archive_link : home_url('/szkolenia/');
 
-        if ($archive_link) {
-            // Jeśli archiwum istnieje, użyj tego URL
-            $archive_url = $archive_link;
-        } else {
-            // Jeśli archiwum nie istnieje (has_archive = false), utwórz URL ręcznie
-            if (function_exists('icl_get_home_url')) {
-                // Jeśli WPML jest aktywny, użyj funkcji WPML do uzyskania poprawnego URL
-                $home_url = icl_get_home_url();
-                $archive_url = trailingslashit($home_url) . 'szkolenia/';
-            } else {
-                // Jeśli WPML nie jest aktywny, użyj standardowego home_url
-                $archive_url = home_url('/szkolenia/');
-            }
-
-            // Zastosuj filtr WPML dla URL (jeśli dostępny)
-            if (function_exists('icl_get_current_language')) {
-                $current_lang = icl_get_current_language();
-                $archive_url = apply_filters('wpml_permalink', $archive_url, $current_lang);
-            }
-        }
-
-        // Pobierz tłumaczenie nazwy "Szkolenia" dla danego języka
+        // Pobierz nazwę archiwum
         $archive_title = __('Szkolenia', 'avsec');
-        if (function_exists('icl_t')) {
-            // Spróbuj pobrać tłumaczenie z WPML String Translation
-            $translated_title = icl_t('avsec', 'Szkolenia', $archive_title);
-            if ($translated_title !== $archive_title) {
-                $archive_title = $translated_title;
-            }
-        }
 
         // Utwórz nowy element breadcrumb dla archiwum
         $archive_breadcrumb = array(
@@ -643,29 +329,3 @@ function avsec_add_szkolenia_breadcrumb($links)
     return $links;
 }
 add_filter('wpseo_breadcrumb_links', 'avsec_add_szkolenia_breadcrumb');
-
-
-// Wymusza tłumaczenie etykiety "Home" w breadcrumb Yoast
-add_filter('wpseo_breadcrumb_links', function ($links) {
-    if (! is_array($links) || empty($links)) {
-        return $links;
-    }
-
-    // pobierz aktualny język (WPML) — ICL_LANGUAGE_CODE lub domyślnie get_locale()
-    $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : substr(get_locale(), 0, 2);
-
-    // dopasuj etykietę dla języków; dodaj kolejne języki w razie potrzeby
-    $home_labels = [
-        'pl' => 'Strona główna',
-        'en' => 'Home',
-        'de' => 'Heim', // przykład
-        // 'de' => 'Startseite',
-    ];
-
-    $label = isset($home_labels[$lang]) ? $home_labels[$lang] : $home_labels['en'];
-
-    // pierwszy element breadcrumb to zwykle link do strony głównej
-    $links[0]['text'] = $label;
-
-    return $links;
-}, 10);

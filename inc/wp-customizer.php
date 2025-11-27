@@ -52,13 +52,26 @@ function avsec_customize_register($wp_customize)
     // Footer Description
     $wp_customize->add_setting('footer_description', array(
         'default'           => '',
-        'sanitize_callback' => 'wp_kses_post',
+        'sanitize_callback' => 'avsec_sanitize_address_with_br',
     ));
 
     $wp_customize->add_control('footer_description', array(
         'label'   => __('Footer Description', 'avsec'),
         'section' => 'footer_brand',
         'type'    => 'textarea',
+    ));
+
+    // Footer Brand Description (Additional)
+    $wp_customize->add_setting('description', array(
+        'default'           => '',
+        'sanitize_callback' => 'avsec_sanitize_address_with_br',
+    ));
+
+    $wp_customize->add_control('description', array(
+        'label'       => __('Description', 'avsec'),
+        'section'     => 'footer_brand',
+        'type'        => 'textarea',
+        'description' => __('Dodatkowy opis w stopce', 'avsec'),
     ));
 
     // Footer Email

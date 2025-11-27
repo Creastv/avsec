@@ -12,8 +12,8 @@ if (!defined('ABSPATH')) {
 }
 
 $header_email = get_theme_mod('header_email', '');
-$platform_button_text = avsec_get_translated_theme_mod('platform_button_text', 'Platform Button Text', __('Platforma AvSec Control', 'avsec'));
-$platform_button_url = avsec_get_translated_theme_mod('platform_button_url', 'Platform Button URL', '#');
+$platform_button_text = avsec_get_theme_mod('platform_button_text', __('Platforma AvSec Control', 'avsec'));
+$platform_button_url = avsec_get_theme_mod('platform_button_url', '#');
 $platform_button_style = get_theme_mod('platform_button_style', 'primary');
 ?>
 

@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 <?php
 // Footer Menu 1
 $menu_1_id = get_theme_mod('footer_menu_1', '');
-$menu_1_title = avsec_get_translated_theme_mod('footer_menu_1_title', 'Footer Menu 1 Title');
+$menu_1_title = avsec_get_theme_mod('footer_menu_1_title');
 
 if ($menu_1_id && $menu_1_title) :
 ?>
@@ -36,7 +36,7 @@ endif;
 
 // Footer Menu 2
 $menu_2_id = get_theme_mod('footer_menu_2', '');
-$menu_2_title = avsec_get_translated_theme_mod('footer_menu_2_title', 'Footer Menu 2 Title');
+$menu_2_title = avsec_get_theme_mod('footer_menu_2_title');
 
 if ($menu_2_id && $menu_2_title) :
 ?>
@@ -56,7 +56,7 @@ endif;
 
 // Footer Menu 3
 $menu_3_id = get_theme_mod('footer_menu_3', '');
-$menu_3_title = avsec_get_translated_theme_mod('footer_menu_3_title', 'Footer Menu 3 Title');
+$menu_3_title = avsec_get_theme_mod('footer_menu_3_title');
 
 if ($menu_3_id && $menu_3_title) :
 ?>

@@ -45,6 +45,7 @@ Wszystkie teksty z WordPress Customizer są automatycznie rejestrowane do tłuma
 3. Znajdź stringi do tłumaczenia:
 
    - Footer Description
+   - Description
    - Footer Menu 1 Title
    - Footer Menu 2 Title
    - Footer Menu 3 Title

@@ -102,6 +102,7 @@ Kompletna dokumentacja obsługi WPML w języku polskim:
 **Rejestrowane stringi:**
 
 - Footer Description
+- Description (dodatkowy opis w footer_brand)
 - Footer Menu 1/2/3 Title
 - Contact Button Text
 - Platform Button Text
