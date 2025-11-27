@@ -1,7 +1,7 @@
 .recommended-posts {
-  padding: $spacing-xxl 0 200px;
-  background-color: $background-dark;
-  margin-bottom: -150px;
+  padding: $spacing-xxl 0;
+  // background-color: $background-dark;
+  // margin-bottom: -150px;
   .recommended-posts__posts-wraper {
     display: grid;
     gap: $spacing-md;
