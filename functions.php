@@ -591,7 +591,7 @@ add_filter('wpseo_breadcrumb_links', function ($links) {
     $home_labels = [
         'pl' => 'Strona główna',
         'en' => 'Home',
-        'es' => 'Inicio', // przykład
+        'de' => 'Heim', // przykład
         // 'de' => 'Startseite',
     ];
 
