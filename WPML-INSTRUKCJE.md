@@ -32,9 +32,11 @@ Wszystkie teksty z WordPress Customizer są automatycznie rejestrowane do tłuma
 
 **Automatyczna aktualizacja stringów:**
 
+- W Customizerze **zawsze edytujesz wartości w języku domyślnym** - niezależnie od aktualnie wybranego języka w WPML
 - Gdy zmienisz tekst w Customizerze (Wygląd → Dostosuj), wartość jest **automatycznie aktualizowana** w WPML String Translation
 - System automatycznie oznacza tłumaczenia jako "wymagające aktualizacji" po zmianie oryginalnego tekstu
-- **Ważne:** Zmiany w Customizerze zawsze dokonuj w **języku domyślnym** (głównym języku strony)
+- Gdy **usuniesz tekst** w Customizerze, wszystkie tłumaczenia tego tekstu są **automatycznie usuwane**
+- **Ważne:** Customizer edytuje tylko język domyślny - tłumaczenia zarządzasz w WPML → String Translation
 
 #### Aby przetłumaczyć stringi:
 
@@ -217,6 +219,38 @@ W sekcji `<custom-fields>`:
   4. Jeśli problem nadal występuje, wyczyść cache strony i przeglądarki
 
 **Ważne:** Po aktualizacji oryginalnego tekstu, istniejące tłumaczenia są oznaczane jako "wymagające aktualizacji" - musisz je zaktualizować ręcznie w WPML String Translation.
+
+### Usunąłem tekst w Customizerze, ale na angielskiej wersji strony nadal się pokazuje
+
+**Przyczyna:**
+
+- Gdy usuniesz tekst w Customizerze, system usuwa oryginalny tekst z języka domyślnego
+- Jednocześnie automatycznie usuwa wszystkie tłumaczenia tego tekstu z WPML String Translation
+
+**Rozwiązanie:**
+
+- Wyczyść cache strony i przeglądarki
+- Sprawdź **WPML → String Translation** - tłumaczenia powinny być usunięte
+- Jeśli tłumaczenia nadal istnieją, usuń je ręcznie w WPML String Translation
+
+### W Customizerze widzę tekst w języku angielskim zamiast polskiego
+
+**Wyjaśnienie:**
+
+- To jest **poprawne zachowanie** - Customizer zawsze pokazuje i edytuje teksty w języku domyślnym (polskim)
+- Niezależnie od tego, jaki język jest aktualnie wybrany w WPML, Customizer zawsze edytuje wartości podstawowe
+- Nie możesz edytować tłumaczeń w Customizerze - to jest ograniczenie WordPress + WPML
+
+**Dlaczego tak jest:**
+
+- WordPress Customizer nie obsługuje natywnie wielojęzyczności
+- Wartości są przechowywane raz (w języku domyślnym)
+- Tłumaczenia są zarządzane osobno w **WPML → String Translation**
+
+**Jak zarządzać tłumaczeniami:**
+
+1. Edytuj oryginalny tekst w **Wygląd → Dostosuj**
+2. Dodaj/edytuj tłumaczenia w **WPML → String Translation**
 
 ### Tłumaczenia nie są widoczne na stronie
 

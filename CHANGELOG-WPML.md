@@ -1,6 +1,40 @@
 # Changelog - Integracja WPML
 
-## [Poprawka] - 2025-11-27
+## [Poprawka 2] - 2025-11-27 (późniejsza wersja)
+
+### Naprawiono obsługę Customizera i usuwanie stringów
+
+**Problem:**
+- Przy usuwaniu tekstu w Customizerze, tłumaczenia nadal się pokazywały na innych językach
+- W Customizerze przy wybranym języku angielskim w WPML, pokazywały się tłumaczenia zamiast oryginalnych wartości
+- To powodowało zamieszanie - admin nie mógł edytować oryginalnych wartości
+
+**Rozwiązanie:**
+1. **Customizer zawsze pokazuje język domyślny:**
+   - Zmodyfikowano `avsec_get_translated_theme_mod()` aby w Customizerze zawsze zwracać wartość z języka domyślnego
+   - Dodano detekcję `is_customize_preview()` i sprawdzanie `customize.php` w URL
+   - Teraz niezależnie od wybranego języka w WPML, Customizer edytuje wartości podstawowe
+
+2. **Automatyczne usuwanie tłumaczeń:**
+   - Gdy tekst jest usuwany w Customizerze, system automatycznie usuwa wszystkie tłumaczenia
+   - Dodano logikę do `avsec_wpml_update_strings_on_save()` która usuwa tłumaczenia dla pustych wartości
+   - Puste stringi nie są już zwracane z tłumaczeń
+
+**Zmienione pliki:**
+- `functions.php` (linie 315-390) - funkcja `avsec_get_translated_theme_mod()`
+- `functions.php` (linie 248-291) - funkcja `avsec_wpml_update_strings_on_save()`
+- `WPML-INSTRUKCJE.md` - rozszerzona sekcja "Jak to działa" i dodane nowe sekcje troubleshooting
+
+**Jak to teraz działa:**
+1. Otwórz **Wygląd → Dostosuj** (niezależnie od wybranego języka w WPML)
+2. Edytuj teksty - zawsze edytujesz wartości w języku domyślnym
+3. Aby usunąć tekst - wyczyść pole i kliknij "Opublikuj"
+4. Tłumaczenia zostaną automatycznie usunięte
+5. Zarządzaj tłumaczeniami w **WPML → String Translation**
+
+---
+
+## [Poprawka 1] - 2025-11-27
 
 ### Naprawiono aktualizację stringów w WPML String Translation
 

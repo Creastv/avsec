@@ -269,17 +269,30 @@ function avsec_wpml_update_strings_on_save()
                     array('%d')
                 );
 
-                // Mark translations as outdated if value changed
-                $wpdb->update(
-                    $wpdb->prefix . 'icl_string_translations',
-                    array('status' => ICL_STRING_TRANSLATION_NOT_TRANSLATED),
-                    array('string_id' => $string_id),
-                    array('%d'),
-                    array('%d')
-                );
+                // If value is empty, delete all translations
+                // If value changed, mark translations as outdated
+                if (empty($new_value)) {
+                    // Delete all translations for this string
+                    $wpdb->delete(
+                        $wpdb->prefix . 'icl_string_translations',
+                        array('string_id' => $string_id),
+                        array('%d')
+                    );
+                } else {
+                    // Mark translations as outdated if value changed
+                    $wpdb->update(
+                        $wpdb->prefix . 'icl_string_translations',
+                        array('status' => ICL_STRING_TRANSLATION_NOT_TRANSLATED),
+                        array('string_id' => $string_id),
+                        array('%d'),
+                        array('%d')
+                    );
+                }
             } else {
-                // String doesn't exist - register it
-                icl_register_string('avsec', $context_name, $new_value);
+                // String doesn't exist - register it only if not empty
+                if (!empty($new_value)) {
+                    icl_register_string('avsec', $context_name, $new_value);
+                }
             }
         };
 
@@ -324,6 +337,22 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
     $current_lang = avsec_get_current_language();
     $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
 
+    // If we're in Customizer admin panel, ALWAYS return value from default language
+    // This prevents confusion where admin sees translated text in customizer
+    // and can't edit the original value
+    if (is_customize_preview() || (is_admin() && strpos($_SERVER['REQUEST_URI'], 'customize.php') !== false)) {
+        global $sitepress;
+        if ($sitepress && method_exists($sitepress, 'switch_lang') && !empty($default_lang)) {
+            $original_lang = $sitepress->get_current_language();
+            $sitepress->switch_lang($default_lang, true);
+            $value = get_theme_mod($mod_name, $default);
+            $sitepress->switch_lang($original_lang, true);
+            return $value;
+        } else {
+            return get_theme_mod($mod_name, $default);
+        }
+    }
+
     // Always get value from default language first (this is the source of truth)
     $default_value = $default;
     if (!empty($default_lang)) {
@@ -354,6 +383,11 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
     // Make sure string is registered with default language value
     if (!empty($default_value)) {
         icl_register_string('avsec', $context_name, $default_value);
+    }
+
+    // If original value is empty, return empty (don't return translation for empty string)
+    if (empty($default_value)) {
+        return '';
     }
 
     // Try newer WPML API first
