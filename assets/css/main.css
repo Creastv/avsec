@@ -1743,8 +1743,8 @@ mark {
 }
 .footer-column-brand .footer-logo-social .social-links a svg path {
   transition: stroke 0.3s ease;
-  stroke-opacity: 0.6;
-  stroke: #fff;
+  stroke-opacity: 1;
+  stroke: #0e4194;
 }
 .footer-column-brand .footer-logo-social .social-links a:hover svg path {
   stroke: #0054a4;

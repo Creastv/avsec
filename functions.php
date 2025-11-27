@@ -229,6 +229,42 @@ function avsec_wpml_setup()
 }
 add_action('init', 'avsec_wpml_setup');
 
+// Update WPML strings when customizer settings are saved
+function avsec_wpml_update_strings_on_save()
+{
+    // Only run if WPML is active
+    if (!function_exists('icl_register_string')) {
+        return;
+    }
+
+    // Re-register all customizer strings with current values
+    // This ensures WPML has the latest values after customizer save
+    $footer_description = get_theme_mod('footer_description');
+    icl_register_string('avsec', 'Footer Description', $footer_description ? $footer_description : '');
+
+    $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
+    icl_register_string('avsec', 'Footer Menu 1 Title', $footer_menu_1_title ? $footer_menu_1_title : '');
+
+    $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
+    icl_register_string('avsec', 'Footer Menu 2 Title', $footer_menu_2_title ? $footer_menu_2_title : '');
+
+    $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
+    icl_register_string('avsec', 'Footer Menu 3 Title', $footer_menu_3_title ? $footer_menu_3_title : '');
+
+    $contact_button_text = get_theme_mod('contact_button_text');
+    icl_register_string('avsec', 'Contact Button Text', $contact_button_text ? $contact_button_text : '');
+
+    $platform_button_text = get_theme_mod('platform_button_text');
+    icl_register_string('avsec', 'Platform Button Text', $platform_button_text ? $platform_button_text : '');
+
+    $platform_button_url = get_theme_mod('platform_button_url');
+    icl_register_string('avsec', 'Platform Button URL', $platform_button_url ? $platform_button_url : '');
+
+    $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
+    icl_register_string('avsec', 'Szkolenia Archive Subtitle', $szkolenia_archive_subtitle ? $szkolenia_archive_subtitle : '');
+}
+add_action('customize_save_after', 'avsec_wpml_update_strings_on_save');
+
 // Helper function to get translated customizer string
 function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
 {

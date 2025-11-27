@@ -49,8 +49,8 @@
           display: block;
           path {
             transition: stroke $transition-base;
-            stroke-opacity: 0.6;
-            stroke: $background-color;
+            stroke-opacity: 1;
+            stroke: $primary-dark;
           }
         }
         &:hover {
