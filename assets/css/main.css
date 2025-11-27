@@ -4013,6 +4013,8 @@ mark {
 }
 .recommended-posts {
   padding: 3rem 0;
+  background-color: #ededed;
+  margin-bottom: -150px;
 }
 .recommended-posts .recommended-posts__posts-wraper {
   display: grid;

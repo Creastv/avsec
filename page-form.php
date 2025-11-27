@@ -69,11 +69,12 @@ $custom_desc_szkolenia = get_field('opis_przed_zdjeciem_');
             </article>
             <?php endwhile; ?>
         </div>
-        <?php if (is_singular('szkolenia')): ?>
-        <?php get_template_part('template-parts/parts/recomended-training'); ?>
 
-        <?php endif; ?>
     </div>
 </main>
+<?php if (is_singular('szkolenia')): ?>
+<?php get_template_part('template-parts/parts/recomended-training'); ?>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>
