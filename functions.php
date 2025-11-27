@@ -240,13 +240,13 @@ function avsec_wpml_update_strings_on_save()
     // Get current language - this is the language in which customizer is being saved
     $current_lang = function_exists('icl_get_current_language') ? icl_get_current_language() : '';
     $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
-    
+
     // If we're saving in default language, register strings with current values
     // For other languages, WPML String Translation should handle translations
     if ($current_lang === $default_lang || empty($current_lang) || empty($default_lang)) {
         // Helper function to update string value in WPML
         // icl_register_string() will update the value if the string already exists
-        $update_string = function($context_name, $value) {
+        $update_string = function ($context_name, $value) {
             icl_register_string('avsec', $context_name, $value ? $value : '');
         };
 
@@ -286,11 +286,11 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
     if (!function_exists('icl_t')) {
         return get_theme_mod($mod_name, $default);
     }
-    
+
     // Get current language and default language
     $current_lang = avsec_get_current_language();
     $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
-    
+
     // Always get value from default language first (this is the source of truth)
     $default_value = $default;
     if (!empty($default_lang)) {
@@ -307,7 +307,7 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
     } else {
         $default_value = get_theme_mod($mod_name, $default);
     }
-    
+
     // For default language, always return value from default language customizer
     if ($current_lang === $default_lang || empty($default_lang) || empty($current_lang)) {
         // Make sure string is registered with current value for WPML String Translation
@@ -316,13 +316,13 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
         }
         return $default_value;
     }
-    
+
     // For other languages, get translation from WPML String Translation
     // Make sure string is registered with default language value
     if (!empty($default_value)) {
         icl_register_string('avsec', $context_name, $default_value);
     }
-    
+
     // Try newer WPML API first
     if (function_exists('apply_filters')) {
         $translated = apply_filters('wpml_translate_single_string', $default_value, 'avsec', $context_name);
@@ -331,10 +331,10 @@ function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
             return $translated;
         }
     }
-    
+
     // Fallback to icl_t()
     $translated = icl_t('avsec', $context_name, $default_value);
-    
+
     return $translated;
 }
 
@@ -441,106 +441,6 @@ function avsec_get_footer_logo_id()
 
     return avsec_get_translated_attachment_id($logo_id);
 }
-
-// ACF Fields for Header
-add_action('acf/include_fields', function () {
-    if (! function_exists('acf_add_local_field_group')) {
-        return;
-    }
-
-    acf_add_local_field_group(array(
-        'key' => 'group_68fe407e70a37',
-        'title' => 'Header',
-        'fields' => array(
-            array(
-                'key' => 'field_68fe40ce1e50a',
-                'label' => 'Wyłącz nagłówek podstrony',
-                'name' => 'display_header',
-                'aria-label' => '',
-                'type' => 'true_false',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'message' => '',
-                'default_value' => 0,
-                'allow_in_bindings' => 0,
-                'ui_on_text' => '',
-                'ui_off_text' => '',
-                'ui' => 1,
-            ),
-            array(
-                'key' => 'field_68fe40f61e50b',
-                'label' => 'Zdjęcie nagłówka',
-                'name' => 'bg_img',
-                'aria-label' => '',
-                'type' => 'image',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'return_format' => 'url',
-                'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
-                'mime_types' => '',
-                'allow_in_bindings' => 0,
-                'preview_size' => 'medium',
-            ),
-            array(
-                'key' => 'field_68fe41091e50c',
-                'label' => 'Dodatkowy opis pod tytułem',
-                'name' => 'desc',
-                'aria-label' => '',
-                'type' => 'text',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => '',
-                'maxlength' => '',
-                'allow_in_bindings' => 0,
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'page',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-        'show_in_rest' => 0,
-    ));
-});
 
 
 
@@ -676,3 +576,29 @@ function avsec_add_szkolenia_breadcrumb($links)
     return $links;
 }
 add_filter('wpseo_breadcrumb_links', 'avsec_add_szkolenia_breadcrumb');
+
+
+// Wymusza tłumaczenie etykiety "Home" w breadcrumb Yoast
+add_filter('wpseo_breadcrumb_links', function ($links) {
+    if (! is_array($links) || empty($links)) {
+        return $links;
+    }
+
+    // pobierz aktualny język (WPML) — ICL_LANGUAGE_CODE lub domyślnie get_locale()
+    $lang = defined('ICL_LANGUAGE_CODE') ? ICL_LANGUAGE_CODE : substr(get_locale(), 0, 2);
+
+    // dopasuj etykietę dla języków; dodaj kolejne języki w razie potrzeby
+    $home_labels = [
+        'pl' => 'Strona główna',
+        'en' => 'Home',
+        'es' => 'Inicio', // przykład
+        // 'de' => 'Startseite',
+    ];
+
+    $label = isset($home_labels[$lang]) ? $home_labels[$lang] : $home_labels['en'];
+
+    // pierwszy element breadcrumb to zwykle link do strony głównej
+    $links[0]['text'] = $label;
+
+    return $links;
+}, 10);
