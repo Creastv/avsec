@@ -2521,6 +2521,12 @@ mark {
 /* Main content area */
 .site-main {
   padding: 0 0 3rem 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.home .site-main {
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {

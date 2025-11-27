@@ -7,6 +7,8 @@
   // min-height: calc(100vh - 200px);
   padding: 0 0 $spacing-xxl 0;
   // overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
 
   // .container {
   //   max-width: $container-max-width;
@@ -17,6 +19,9 @@
   //     padding: 0 $container-padding-mobile;
   //   }
   // }
+}
+.home .site-main {
+  overflow-x: hidden;
 }
 .single-post .page-title {
   @media (max-width: $breakpoint-md) {

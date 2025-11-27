@@ -237,44 +237,105 @@ function avsec_wpml_update_strings_on_save()
         return;
     }
 
-    // Re-register all customizer strings with current values
-    // This ensures WPML has the latest values after customizer save
-    $footer_description = get_theme_mod('footer_description');
-    icl_register_string('avsec', 'Footer Description', $footer_description ? $footer_description : '');
+    // Get current language - this is the language in which customizer is being saved
+    $current_lang = function_exists('icl_get_current_language') ? icl_get_current_language() : '';
+    $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
+    
+    // If we're saving in default language, register strings with current values
+    // For other languages, WPML String Translation should handle translations
+    if ($current_lang === $default_lang || empty($current_lang) || empty($default_lang)) {
+        // Helper function to update string value in WPML
+        // icl_register_string() will update the value if the string already exists
+        $update_string = function($context_name, $value) {
+            icl_register_string('avsec', $context_name, $value ? $value : '');
+        };
 
-    $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
-    icl_register_string('avsec', 'Footer Menu 1 Title', $footer_menu_1_title ? $footer_menu_1_title : '');
+        // Re-register all customizer strings with current values
+        // This ensures WPML has the latest values after customizer save
+        $footer_description = get_theme_mod('footer_description');
+        $update_string('Footer Description', $footer_description);
 
-    $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
-    icl_register_string('avsec', 'Footer Menu 2 Title', $footer_menu_2_title ? $footer_menu_2_title : '');
+        $footer_menu_1_title = get_theme_mod('footer_menu_1_title');
+        $update_string('Footer Menu 1 Title', $footer_menu_1_title);
 
-    $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
-    icl_register_string('avsec', 'Footer Menu 3 Title', $footer_menu_3_title ? $footer_menu_3_title : '');
+        $footer_menu_2_title = get_theme_mod('footer_menu_2_title');
+        $update_string('Footer Menu 2 Title', $footer_menu_2_title);
 
-    $contact_button_text = get_theme_mod('contact_button_text');
-    icl_register_string('avsec', 'Contact Button Text', $contact_button_text ? $contact_button_text : '');
+        $footer_menu_3_title = get_theme_mod('footer_menu_3_title');
+        $update_string('Footer Menu 3 Title', $footer_menu_3_title);
 
-    $platform_button_text = get_theme_mod('platform_button_text');
-    icl_register_string('avsec', 'Platform Button Text', $platform_button_text ? $platform_button_text : '');
+        $contact_button_text = get_theme_mod('contact_button_text');
+        $update_string('Contact Button Text', $contact_button_text);
 
-    $platform_button_url = get_theme_mod('platform_button_url');
-    icl_register_string('avsec', 'Platform Button URL', $platform_button_url ? $platform_button_url : '');
+        $platform_button_text = get_theme_mod('platform_button_text');
+        $update_string('Platform Button Text', $platform_button_text);
 
-    $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
-    icl_register_string('avsec', 'Szkolenia Archive Subtitle', $szkolenia_archive_subtitle ? $szkolenia_archive_subtitle : '');
+        $platform_button_url = get_theme_mod('platform_button_url');
+        $update_string('Platform Button URL', $platform_button_url);
+
+        $szkolenia_archive_subtitle = get_theme_mod('szkolenia_archive_subtitle');
+        $update_string('Szkolenia Archive Subtitle', $szkolenia_archive_subtitle);
+    }
 }
 add_action('customize_save_after', 'avsec_wpml_update_strings_on_save');
 
 // Helper function to get translated customizer string
 function avsec_get_translated_theme_mod($mod_name, $context_name, $default = '')
 {
-    $value = get_theme_mod($mod_name, $default);
-
-    if (function_exists('icl_t')) {
-        return icl_t('avsec', $context_name, $value);
+    // If WPML is not active, return value directly
+    if (!function_exists('icl_t')) {
+        return get_theme_mod($mod_name, $default);
     }
-
-    return $value;
+    
+    // Get current language and default language
+    $current_lang = avsec_get_current_language();
+    $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
+    
+    // Always get value from default language first (this is the source of truth)
+    $default_value = $default;
+    if (!empty($default_lang)) {
+        global $sitepress;
+        if ($sitepress && method_exists($sitepress, 'switch_lang')) {
+            $original_lang = $sitepress->get_current_language();
+            $sitepress->switch_lang($default_lang, true);
+            $default_value = get_theme_mod($mod_name, $default);
+            $sitepress->switch_lang($original_lang, true);
+        } else {
+            // Fallback if sitepress is not available
+            $default_value = get_theme_mod($mod_name, $default);
+        }
+    } else {
+        $default_value = get_theme_mod($mod_name, $default);
+    }
+    
+    // For default language, always return value from default language customizer
+    if ($current_lang === $default_lang || empty($default_lang) || empty($current_lang)) {
+        // Make sure string is registered with current value for WPML String Translation
+        if (!empty($default_value)) {
+            icl_register_string('avsec', $context_name, $default_value);
+        }
+        return $default_value;
+    }
+    
+    // For other languages, get translation from WPML String Translation
+    // Make sure string is registered with default language value
+    if (!empty($default_value)) {
+        icl_register_string('avsec', $context_name, $default_value);
+    }
+    
+    // Try newer WPML API first
+    if (function_exists('apply_filters')) {
+        $translated = apply_filters('wpml_translate_single_string', $default_value, 'avsec', $context_name);
+        // If translation exists and is different from original, use it
+        if ($translated !== $default_value && !empty($translated)) {
+            return $translated;
+        }
+    }
+    
+    // Fallback to icl_t()
+    $translated = icl_t('avsec', $context_name, $default_value);
+    
+    return $translated;
 }
 
 // Get current language code
