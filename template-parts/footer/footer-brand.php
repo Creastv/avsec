@@ -66,7 +66,7 @@ if (!defined('ABSPATH')) {
         <?php
         $footer_description = avsec_get_translated_theme_mod('footer_description', 'Footer Description');
         if ($footer_description) {
-            echo '<p>' . wp_kses_post($footer_description) . '</p>';
+            echo '<p>' . $footer_description . '</p>';
         }
         ?>
     </div>
