@@ -75,6 +75,7 @@
 }
 .bullets-container.style-1 .bullet-item .bullet-content {
   text-align: left;
+  width: calc(100% - 48px);
 }
 .bullets-container.style-1 .bullet-item .bullet-title {
   padding: 0;

@@ -445,3 +445,16 @@
     padding: 20px 20px !important;
   }
 }
+
+@media (min-width: $breakpoint-xll) {
+  #mega-menu-wrap-primary
+    #mega-menu-primary
+    > li.mega-menu-megamenu
+    > ul.mega-sub-menu
+    li.mega-menu-column-standard
+    > a.mega-menu-link {
+    padding: 10px 10px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
