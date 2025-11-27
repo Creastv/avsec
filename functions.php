@@ -241,16 +241,49 @@ function avsec_wpml_update_strings_on_save()
     $current_lang = function_exists('icl_get_current_language') ? icl_get_current_language() : '';
     $default_lang = function_exists('icl_get_default_language') ? icl_get_default_language() : '';
 
-    // If we're saving in default language, register strings with current values
+    // If we're saving in default language, update strings with current values
     // For other languages, WPML String Translation should handle translations
     if ($current_lang === $default_lang || empty($current_lang) || empty($default_lang)) {
+        global $wpdb;
+
         // Helper function to update string value in WPML
-        // icl_register_string() will update the value if the string already exists
-        $update_string = function ($context_name, $value) {
-            icl_register_string('avsec', $context_name, $value ? $value : '');
+        // This function will properly update existing strings in WPML database
+        $update_string = function ($context_name, $new_value) use ($wpdb) {
+            $new_value = $new_value ? $new_value : '';
+
+            // First, try to find existing string in WPML database
+            $string_id = $wpdb->get_var($wpdb->prepare(
+                "SELECT id FROM {$wpdb->prefix}icl_strings 
+                WHERE context = %s AND name = %s",
+                'avsec',
+                $context_name
+            ));
+
+            if ($string_id) {
+                // String exists - update its value
+                $wpdb->update(
+                    $wpdb->prefix . 'icl_strings',
+                    array('value' => $new_value),
+                    array('id' => $string_id),
+                    array('%s'),
+                    array('%d')
+                );
+
+                // Mark translations as outdated if value changed
+                $wpdb->update(
+                    $wpdb->prefix . 'icl_string_translations',
+                    array('status' => ICL_STRING_TRANSLATION_NOT_TRANSLATED),
+                    array('string_id' => $string_id),
+                    array('%d'),
+                    array('%d')
+                );
+            } else {
+                // String doesn't exist - register it
+                icl_register_string('avsec', $context_name, $new_value);
+            }
         };
 
-        // Re-register all customizer strings with current values
+        // Re-register/update all customizer strings with current values
         // This ensures WPML has the latest values after customizer save
         $footer_description = get_theme_mod('footer_description');
         $update_string('Footer Description', $footer_description);

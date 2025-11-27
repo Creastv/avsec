@@ -26,7 +26,17 @@ Motyw AvSec został przygotowany do współpracy z wtyczką WPML (WordPress Mult
 
 ### 3. Tłumaczenie stringów z Customizera
 
-Wszystkie teksty z WordPress Customizer są automatycznie rejestrowane do tłumaczenia. Aby je przetłumaczyć:
+Wszystkie teksty z WordPress Customizer są automatycznie rejestrowane do tłumaczenia.
+
+#### Jak to działa:
+
+**Automatyczna aktualizacja stringów:**
+
+- Gdy zmienisz tekst w Customizerze (Wygląd → Dostosuj), wartość jest **automatycznie aktualizowana** w WPML String Translation
+- System automatycznie oznacza tłumaczenia jako "wymagające aktualizacji" po zmianie oryginalnego tekstu
+- **Ważne:** Zmiany w Customizerze zawsze dokonuj w **języku domyślnym** (głównym języku strony)
+
+#### Aby przetłumaczyć stringi:
 
 1. Przejdź do **WPML → String Translation**
 2. Wyszukaj domenę **avsec**
@@ -41,6 +51,8 @@ Wszystkie teksty z WordPress Customizer są automatycznie rejestrowane do tłuma
    - Szkolenia Archive Subtitle
 
 4. Kliknij na każdy string i dodaj tłumaczenia dla wybranych języków
+
+**Ważne:** Po zmianie tekstu w języku domyślnym, będziesz musiał zaktualizować tłumaczenia w innych językach.
 
 ### 4. Tłumaczenie treści
 
@@ -193,11 +205,25 @@ W sekcji `<custom-fields>`:
 2. Odśwież stronę frontową witryny (aby uruchomić funkcję `avsec_wpml_setup()`)
 3. Przejdź do **WPML → String Translation** i kliknij "Scan strings"
 
+### Po zmianie tekstu w Customizerze, w WPML String Translation pokazuje się stary tekst
+
+**Rozwiązanie:**
+
+- System automatycznie aktualizuje wartości stringów po zapisaniu Customizera
+- Jeśli widzisz stary tekst:
+  1. Odśwież stronę **WPML → String Translation** (Ctrl+R / Cmd+R)
+  2. Upewnij się, że zmiany były dokonane w **języku domyślnym** strony
+  3. Sprawdź czy tłumaczenia nie są oznaczone jako "wymagające aktualizacji" (pomarańczowy status)
+  4. Jeśli problem nadal występuje, wyczyść cache strony i przeglądarki
+
+**Ważne:** Po aktualizacji oryginalnego tekstu, istniejące tłumaczenia są oznaczane jako "wymagające aktualizacji" - musisz je zaktualizować ręcznie w WPML String Translation.
+
 ### Tłumaczenia nie są widoczne na stronie
 
 1. Sprawdź czy wybrałeś właściwy język w przełączniku
 2. Upewnij się, że stringi są przetłumaczone w **WPML → String Translation**
 3. Wyczyść cache strony (jeśli używasz wtyczki do cache)
+4. Sprawdź czy status tłumaczenia nie jest "wymagające aktualizacji" - jeśli tak, zaktualizuj tłumaczenie
 
 ### Przełącznik języków nie jest widoczny
 

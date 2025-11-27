@@ -1,5 +1,35 @@
 # Changelog - Integracja WPML
 
+## [Poprawka] - 2025-11-27
+
+### Naprawiono aktualizację stringów w WPML String Translation
+
+**Problem:**
+- Po zmianie tekstów w Customizerze (np. Footer Description), w WPML String Translation pokazywał się nadal stary tekst
+- Funkcja `icl_register_string()` nie aktualizowała wartości istniejących stringów
+
+**Rozwiązanie:**
+- Zmodyfikowano funkcję `avsec_wpml_update_strings_on_save()` w `functions.php`
+- Dodano bezpośrednie operacje na bazie danych WPML do aktualizacji wartości stringów
+- System teraz:
+  1. Sprawdza czy string już istnieje w bazie WPML
+  2. Jeśli istnieje - aktualizuje jego wartość
+  3. Oznacza istniejące tłumaczenia jako "wymagające aktualizacji"
+  4. Jeśli nie istnieje - rejestruje nowy string
+
+**Zmienione pliki:**
+- `functions.php` (linie 232-280) - funkcja `avsec_wpml_update_strings_on_save()`
+- `WPML-INSTRUKCJE.md` - zaktualizowano sekcję "Tłumaczenie stringów z Customizera" i "Troubleshooting"
+
+**Jak to teraz działa:**
+1. Zmień tekst w Customizerze (w języku domyślnym)
+2. Kliknij "Opublikuj"
+3. Wartość w WPML String Translation zostanie automatycznie zaktualizowana
+4. Istniejące tłumaczenia zostaną oznaczone jako "wymagające aktualizacji"
+5. Zaktualizuj tłumaczenia w WPML → String Translation
+
+---
+
 ## Dodane pliki
 
 ### 1. wpml-config.xml
