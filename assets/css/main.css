@@ -44,7 +44,6 @@ body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden !important;
 }
 
 /* Container */
@@ -2775,16 +2774,6 @@ mark {
   position: relative;
   padding-bottom: 30px;
   margin-bottom: 20px;
-}
-.page-form .page-form__header:before {
-  content: "";
-  position: absolute;
-  left: var(--before-left, -150%);
-  width: var(--before-width, 400%);
-  height: calc(100% + 2rem) !important;
-  background-color: #f8f8f8;
-  z-index: -1;
-  margin-top: -2rem;
 }
 .page-form .page-form__header .post-thumbnail img {
   max-height: 500px;

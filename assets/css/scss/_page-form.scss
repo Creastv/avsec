@@ -16,16 +16,16 @@
     position: relative;
     padding-bottom: 30px;
     margin-bottom: 20px;
-    &:before {
-      content: "";
-      position: absolute;
-      left: var(--before-left, -150%);
-      width: var(--before-width, 400%);
-      height: calc(100% + 2rem) !important;
-      background-color: $background-light;
-      z-index: -1;
-      margin-top: -2rem;
-    }
+    // &:before {
+    //   content: "";
+    //   position: absolute;
+    //   left: var(--before-left, -150%);
+    //   width: var(--before-width, 400%);
+    //   height: calc(100% + 2rem) !important;
+    //   background-color: $background-light;
+    //   z-index: -1;
+    //   margin-top: -2rem;
+    // }
     .post-thumbnail {
       img {
         max-height: 500px;
