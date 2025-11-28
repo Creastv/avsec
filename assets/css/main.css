@@ -1726,6 +1726,12 @@ mark {
     max-width: 100%;
   }
 }
+@media (max-width: 576px) {
+  .footer-column-brand .footer-logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
 .footer-column-brand .footer-logo-social {
   display: flex;
   flex-wrap: wrap;

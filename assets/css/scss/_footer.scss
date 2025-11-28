@@ -27,6 +27,12 @@
   @media (max-width: $breakpoint-lg) {
     max-width: 100%;
   }
+  .footer-logo {
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
   .footer-logo-social {
     display: flex;
     flex-wrap: wrap;
