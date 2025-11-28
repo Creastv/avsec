@@ -23,6 +23,7 @@
         outline: 0 !important;
         // background-color: $background-light;
         margin-bottom: 20px;
+        padding-left: 15px;
         .calaps-icon {
           &:before {
             content: "−";
@@ -42,7 +43,7 @@
           li {
             // list-style: numbr;
             // padding-left: 50px !important;
-            background-color: $background-light;
+            background-color: #fff;
             border: 2px solid $background-dark;
             border-left: 3px solid $primary-color;
             border-radius: $border-radius-md;
