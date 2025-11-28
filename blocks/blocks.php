@@ -24,6 +24,29 @@ function register_acf_block_types()
     }
   ));
   acf_register_block_type(array(
+    'name'              => 'calaps',
+    'title'             => __('Moduły - calaps'),
+    'render_template'   => 'blocks/calaps/calaps.php',
+    'category'          => 'formatting',
+    'icon' => array(
+      'background' => '#0e4194',
+      'foreground' => '#fff',
+      'src' => 'ellipsis',
+    ),
+    'mode'            => 'preview',
+    'keywords'          => array('Kontener', 'calaps'),
+    'supports'    => [
+      'align'      => false,
+      'anchor'    => true,
+      'customClassName'  => true,
+      'jsx'       => false,
+    ],
+    'enqueue_assets'    => function () {
+      wp_enqueue_style('go-calaps',  get_template_directory_uri() . '/blocks/calaps/calaps.min.css');
+      wp_enqueue_script('go-calaps-js', get_template_directory_uri() . '/blocks/calaps/calaps.js', array(), '1.0', true);
+    }
+  ));
+  acf_register_block_type(array(
     'name'              => 'info-contact',
     'title'             => __('Info kontakt'),
     'render_template'   => 'blocks/info-contact/info-contact.php',

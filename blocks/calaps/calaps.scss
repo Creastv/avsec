@@ -1,0 +1,132 @@
+@import "../../assets/css/scss/variables";
+
+.calaps-block {
+  margin-bottom: 10px;
+
+  .calaps-item {
+    border: 2px solid $background-dark;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: $transition-base;
+
+    &.active {
+      border-color: $primary-color;
+      background-color: rgba(255, 255, 255, 1);
+
+      .calaps-header {
+        outline: 0 !important;
+        .calaps-icon {
+          &:before {
+            content: "−";
+          }
+        }
+      }
+
+      .calaps-content {
+        max-height: 2000px;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  .calaps-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: $font-family-primary;
+    font-size: 1.25em;
+    line-height: 1.625em;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+    transition: $transition-base;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1em;
+      padding: 12px 15px;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &:focus {
+      //   outline: 2px solid $primary-color;
+      //   outline-offset: -2px;
+    }
+  }
+
+  .calaps-title {
+    flex: 1;
+    padding-right: 15px;
+  }
+
+  .calaps-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: $primary-dark;
+    transition: $transition-base;
+
+    &:before {
+      content: "+";
+    }
+  }
+
+  .calaps-content {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .calaps-inner {
+    padding: 0 20px 20px;
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 15px 15px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul,
+    ol {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// High contrast mode
+.hight-contrast {
+  .calaps-block {
+    .calaps-item {
+      border-color: $background-black;
+
+      &.active {
+        background-color: $primary-color;
+
+        .calaps-header,
+        .calaps-inner {
+          color: #fff;
+        }
+
+        .calaps-icon {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
