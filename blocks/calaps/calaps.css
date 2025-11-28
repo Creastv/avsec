@@ -22,11 +22,11 @@
   margin: 30px 0;
 }
 .calaps-block .calaps-item {
-  border: 2px solid #ededed;
-  border-radius: 6px;
+  border-top: 2px solid #ededed;
+  border-bottom: 2px solid #ededed;
+  border-radius: 0px;
   overflow: hidden;
   transition: 0.3s ease;
-  background-color: #f8f8f8;
 }
 .calaps-block .calaps-item.active {
   border-color: #0054a4;
@@ -34,7 +34,6 @@
 }
 .calaps-block .calaps-item.active .calaps-header {
   outline: 0 !important;
-  background-color: #f8f8f8;
   margin-bottom: 20px;
 }
 .calaps-block .calaps-item.active .calaps-header .calaps-icon:before {
