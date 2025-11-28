@@ -1714,7 +1714,7 @@ mark {
 }
 @media (max-width: 576px) {
   .footer-main {
-    padding: 0;
+    padding: 2rem 0;
   }
 }
 
@@ -1733,6 +1733,11 @@ mark {
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 576px) {
+  .footer-column-brand .footer-logo-social {
+    gap: 0;
+  }
+}
 .footer-column-brand .footer-logo-social .social-links {
   display: flex;
   align-items: center;
@@ -1745,6 +1750,11 @@ mark {
   height: 50px;
   background-color: #fff;
   opacity: 0.1;
+}
+@media (max-width: 576px) {
+  .footer-column-brand .footer-logo-social .social-links:before {
+    display: none;
+  }
 }
 .footer-column-brand .footer-logo-social .social-links a svg {
   display: block;
@@ -1820,7 +1830,7 @@ mark {
 }
 @media (max-width: 576px) {
   .footer-column-menus .calaps {
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid #ddd;
   }
   .footer-column-menus .calaps .calaps__opener {
     position: relative;

@@ -18,7 +18,8 @@
     flex-wrap: wrap;
   }
   @media (max-width: $breakpoint-sm) {
-    padding: 0;
+    // padding: 0;
+    padding: $spacing-xl 0;
   }
 }
 .footer-column-brand {
@@ -32,7 +33,10 @@
     align-items: center;
     gap: $spacing-lg;
     margin-bottom: $spacing-lg;
-
+    @media (max-width: $breakpoint-sm) {
+      gap: 0;
+      // width: 100%;
+    }
     .social-links {
       display: flex;
       align-items: center;
@@ -44,6 +48,9 @@
         height: 50px;
         background-color: $background-color;
         opacity: 0.1;
+        @media (max-width: $breakpoint-sm) {
+          display: none;
+        }
       }
       a {
         svg {
@@ -141,7 +148,7 @@
   }
   @media (max-width: $breakpoint-sm) {
     .calaps {
-      border-bottom: 1px solid $background-color;
+      border-top: 1px solid $border-color;
 
       .calaps__opener {
         position: relative;
