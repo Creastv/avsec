@@ -41,6 +41,9 @@
 .header-content-right {
   @media (max-width: $breakpoint-lg) {
     background-color: $background-dark;
+    justify-content: center;
+    padding: $spacing-sm 0;
+    width: CALC(100% + 30px);
   }
   @media (max-width: $breakpoint-md) {
     gap: $spacing-sm;
