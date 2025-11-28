@@ -39,6 +39,9 @@
   gap: $spacing-lg;
 }
 .header-content-right {
+  @media (max-width: $breakpoint-lg) {
+    background-color: $background-dark;
+  }
   @media (max-width: $breakpoint-md) {
     gap: $spacing-sm;
     flex-wrap: wrap;

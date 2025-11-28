@@ -1144,6 +1144,11 @@ mark {
   gap: 1.5rem;
 }
 
+@media (max-width: 992px) {
+  .header-content-right {
+    background-color: #ededed;
+  }
+}
 @media (max-width: 768px) {
   .header-content-right {
     gap: 0.5rem;
