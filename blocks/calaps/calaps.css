@@ -30,7 +30,7 @@
 }
 .calaps-block .calaps-item.active {
   border-color: #0054a4;
-  background-color: rgb(255, 255, 255);
+  background-color: #f8f8f8;
 }
 .calaps-block .calaps-item.active .calaps-header {
   outline: 0 !important;

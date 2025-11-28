@@ -8,6 +8,7 @@
     // border: 2px solid $background-dark;
     border-top: 2px solid $background-dark;
     border-bottom: 2px solid $background-dark;
+
     border-radius: 0px;
     overflow: hidden;
     transition: $transition-base;
@@ -15,7 +16,8 @@
 
     &.active {
       border-color: $primary-color;
-      background-color: rgba(255, 255, 255, 1);
+      // background-color: @background-light;
+      background-color: $background-light;
 
       .calaps-header {
         outline: 0 !important;
