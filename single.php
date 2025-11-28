@@ -53,7 +53,8 @@ get_header(); ?>
 
         <?php endwhile; ?>
     </div>
-    <?php get_template_part('template-parts/parts/recomended-posts'); ?>
+
 </main>
+<?php get_template_part('template-parts/parts/recomended-posts'); ?>
 
 <?php get_footer(); ?>

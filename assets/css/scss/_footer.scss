@@ -12,7 +12,8 @@
   display: flex;
   justify-content: space-between;
   gap: $spacing-xl;
-  padding: 0 50px;
+  // padding: 0 50px;
+  padding: $spacing-xxl 0;
   @media (max-width: $breakpoint-lg) {
     flex-wrap: wrap;
   }
