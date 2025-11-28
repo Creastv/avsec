@@ -9,6 +9,7 @@
     border-radius: 6px;
     overflow: hidden;
     transition: $transition-base;
+    background-color: $background-light;
 
     &.active {
       border-color: $primary-color;
@@ -16,6 +17,8 @@
 
       .calaps-header {
         outline: 0 !important;
+        background-color: $background-light;
+        margin-bottom: 20px;
         .calaps-icon {
           &:before {
             content: "−";
@@ -66,6 +69,7 @@
   .calaps-title {
     flex: 1;
     padding-right: 15px;
+    margin-bottom: 0;
   }
 
   .calaps-icon {

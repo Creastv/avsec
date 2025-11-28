@@ -27,6 +27,7 @@
   border-radius: 6px;
   overflow: hidden;
   transition: 0.3s ease;
+  background-color: #f8f8f8;
 }
 .calaps-block .calaps-item.active {
   border-color: #0054a4;
@@ -34,6 +35,8 @@
 }
 .calaps-block .calaps-item.active .calaps-header {
   outline: 0 !important;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
 }
 .calaps-block .calaps-item.active .calaps-header .calaps-icon:before {
   content: "−";
@@ -72,6 +75,7 @@
 .calaps-block .calaps-title {
   flex: 1;
   padding-right: 15px;
+  margin-bottom: 0;
 }
 .calaps-block .calaps-icon {
   flex-shrink: 0;
