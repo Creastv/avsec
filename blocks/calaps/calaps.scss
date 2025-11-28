@@ -30,6 +30,25 @@
         max-height: 2000px;
         visibility: visible;
         opacity: 1;
+        ul,
+        ol {
+          padding: 0;
+          margin-bottom: 30px;
+          list-style: none;
+          li {
+            // list-style: numbr;
+            // padding-left: 50px !important;
+            background-color: $background-light;
+            border: 2px solid $background-dark;
+            border-left: 3px solid $primary-color;
+            border-radius: $border-radius-md;
+            padding: 5px 15px;
+            margin-bottom: 10px;
+            &::marker {
+              left: 50px !important;
+            }
+          }
+        }
       }
     }
   }
