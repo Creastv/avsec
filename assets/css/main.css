@@ -1571,6 +1571,9 @@ mark {
   color: #14395e;
   margin-bottom: 1.5rem;
 }
+.page-title-wrapper p {
+  color: #14395e !important;
+}
 .page-title-wrapper .page-subtitle {
   font-size: 0.875rem;
   color: #0a0a0a;
