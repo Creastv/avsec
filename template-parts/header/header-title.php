@@ -105,26 +105,26 @@ $show_meta = is_single();
 <div
     class="page-title-wrapper <?php if ($bg_image) echo 'has-bg-image'; ?> <?php if (is_home() || is_single() || is_category()) echo ' post-page-wrap--extend'; ?>">
     <?php if ($bg_image) : ?>
-    <img src="<?php echo esc_url($bg_image); ?>" alt="<?php echo esc_attr($title); ?>"
-        class="page-title-bg-image go-parallex">
+        <img src="<?php echo esc_url($bg_image); ?>" alt="<?php echo esc_attr($title); ?>"
+            class="page-title-bg-image go-parallex">
     <?php endif; ?>
     <div class="container-narrow">
         <?php if ($show_meta) : ?>
-        <?php if (function_exists('yoast_breadcrumb')) : ?>
-        <nav class="breadcrumbs" aria-label="Breadcrumbs">
-            <?php yoast_breadcrumb('', ''); ?>
-        </nav>
-        <?php endif; ?>
+            <?php if (function_exists('yoast_breadcrumb')) : ?>
+                <nav class="breadcrumbs" aria-label="Breadcrumbs">
+                    <?php yoast_breadcrumb('', ''); ?>
+                </nav>
+            <?php endif; ?>
         <?php endif; ?>
         <?php if (is_404()) : ?>
-        <h1 class="page-title">404</h1>
+            <h1 class="page-title">404</h1>
         <?php endif; ?>
         <h1 class="page-title"><?php echo $title; ?></h1>
         <?php if ($subtitle) : ?>
-        <p class="page-subtitle"><?php echo $subtitle; ?></p>
+            <div class="page-subtitle"><?php echo $subtitle; ?></div>
         <?php endif; ?>
         <?php if (is_home() || is_category()): ?>
-        <?php
+            <?php
             $navLocation = 'blog';
             $temp_menu = wp_nav_menu(array(
                 'theme_location'  => $navLocation,
@@ -139,9 +139,9 @@ $show_meta = is_single();
         <?php endif; ?>
 
         <?php if (is_search() || is_404()) : ?>
-        <div class="search-form">
-            <?php get_search_form(); ?>
-        </div>
+            <div class="search-form">
+                <?php get_search_form(); ?>
+            </div>
         <?php endif; ?>
 
     </div>
