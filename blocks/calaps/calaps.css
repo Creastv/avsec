@@ -19,8 +19,7 @@
 /* Cards */
 /* Tables */
 .calaps-block {
-  margin-bottom: 10px;
-  margin: 1rem 0;
+  margin: 30px 0;
 }
 .calaps-block .calaps-item {
   border: 2px solid #ededed;
@@ -45,6 +44,25 @@
   max-height: 2000px;
   visibility: visible;
   opacity: 1;
+}
+.calaps-block .calaps-item.active .calaps-content ul,
+.calaps-block .calaps-item.active .calaps-content ol {
+  padding: 0;
+  margin-bottom: 30px;
+  list-style: none;
+}
+.calaps-block .calaps-item.active .calaps-content ul li,
+.calaps-block .calaps-item.active .calaps-content ol li {
+  background-color: #f8f8f8;
+  border: 2px solid #ededed;
+  border-left: 3px solid #0054a4;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 10px;
+}
+.calaps-block .calaps-item.active .calaps-content ul li::marker,
+.calaps-block .calaps-item.active .calaps-content ol li::marker {
+  left: 50px !important;
 }
 .calaps-block .calaps-header {
   width: 100%;
